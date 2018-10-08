@@ -50,24 +50,14 @@ BEISPIEL: ÄNDERUNG DES DOKUMENTES:
 
 TR: Grundlayout für die Seite songtexte.html erstellt
 
-
-
 WELCHE ÄNDERUNGEN HABE ICH VORGENOMMEN / WAS ÄNDERT SICH FÜR DEN ANWENDER?
-
 Es ist nun möglich eine Liste der bisher vorhanden Songtexte anzuzeigen.
 
-Der Aufbau ist ie folgt:
-
-Auf der linken Seite ist ein Logo/Cover des Songtextes zu sehen, rechts davon der Interpret & Titel des Songs.
-
-Durch klick auf den Song gelant wird der entsprechende Songtext inkl. der Noten geladen und angezeigt.
-
-
+Der Aufbau ist wie folgt:
+Auf der linken Seite ist ein Logo/Cover des Songtextes zu sehen, rechts davon der Interpret & der Titel des Songs.
 
 WELCHE QUELLCODEÄNDERUNGEN WURDEN HIERFÜR VORGENOMMEN?
-
 In der CSS-Datei songtexte.css wurden die Klassen "song", "icon", "description" und "title" hinzugefügt.
-
 Diese sind verantwortlich für die Darstellung der einzelnen Songs auf der Seite Songtexte.html
 
 In der HTML-Datei wurden die ersten Songtexte hinzugefügt.
