@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Songtexte</title>
+
+    <!-- Bootstrap einbinden -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Eigene Stylesheets -->
+    <link rel="stylesheet" href="css/songtexte.css" />
+</head>
+
+<body>
+    <!-- Navigationsleiste -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Logo</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link" href="#">Menü</a>
+                <a class="nav-item nav-link" href="#">Online-Anmeldung</a>
+                <a class="nav-item nav-link" href="#">Kalender</a>
+                <a class="nav-item nav-link" href="#">Gallerie</a>
+                <a class="nav-item nav-link active" href="#">Songtexte <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="#">Kontakt</a>
+                <a class="nav-item nav-link" href="#">Intern</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Seiteninhalt -->
+    <main>
+        <!-- Liste der Songtexte -->
+        <section class="container">
+            <!--Überschrift-->
+            <h1>
+                Songtexte
+            </h1>
+            
+            <!--Anfang eines Song Elements-->
+            <a href="#ein-kompliment">
+                <div class="song">
+                    <div class="icon"><img src="https://images-na.ssl-images-amazon.com/images/I/41L5SK2fn7L.jpg" alt="💿"></div>
+                    <div class="description">
+                        <span class="title">
+                            Ein Kompliment
+                        </span>
+                        <br>Sportfreunde Stiller
+                    </div>
+                </div>
+            </a>
+            <!--Ende eines Song Elements-->
+            
+            <!--Anfang eines Song Elements-->
+            <a href="#kameradenlied">
+                <div class="song">
+                    <div class="icon"><img src="https://s3.amazonaws.com/pix.iemoji.com/images/emoji/apple/ios-11/256/musical-score.png" alt="💿"></div>
+                    <div class="description">
+                        <span class="title">
+                            Kameradenlied
+                        </span>
+                        <br>Lager-Team
+                    </div>
+                </div>
+            </a>
+            <!--Ende eines Song Elements-->
+            
+            <!--Anfang eines Song Elements-->
+            <a href="#bws">
+                <div class="song">
+                    <div class="icon"><img src="" alt="💿"></div>
+                    <div class="description">
+                        <span class="title">
+                            Belibiger weiterer Song
+                        </span>
+                        <br>Interpret des Songs
+                    </div>
+                </div>
+            </a>
+            <!--Ende eines Song Elements-->
+        </section>
+    </main>
+
+</body>
+
+</html>

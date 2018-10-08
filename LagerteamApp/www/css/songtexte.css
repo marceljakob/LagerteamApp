@@ -1,0 +1,48 @@
+.hidden{
+    display: none;
+}
+
+.container > h1{
+    margin-top: 0.8em;
+    margin-bottom: 0.6em;
+}
+
+.container > a:hover{
+    text-decoration: none;
+}
+
+.song{
+    font-size: 1.7em;
+    border: 1px;
+    border-style: solid;
+    border-radius: 5px;
+    border-color: lightgray;
+    padding: 0.5em;
+    margin-bottom: 1em;
+    width: 25em;
+    color: rgba(25, 25, 25);
+}
+
+.song > .icon{
+    font-size: 330%;
+    display: inline-block;
+}
+
+.song > .icon > img {
+    height: 150px;
+    width: 150px;
+    object-fit: cover;
+    border: 1px;
+    border-style: solid;
+    border-color: lightgray;
+    border-radius: 100%;
+}
+
+.song .title{
+    font-weight: bold;
+}
+
+.song > .description{
+    display: inline-block;
+    margin-left: 1em;
+}
