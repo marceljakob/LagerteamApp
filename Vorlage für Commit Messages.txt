@@ -1,33 +1,73 @@
-ï»¿<!-- Bei Ã„nderungen an der Struktur oder einem Namen: -->
-NamensKÃ¼rzel: Kurzbeschreibung der Ã„nderung in der ersten Zeile
+<!-- Bei Änderungen an der Struktur oder einem Namen: -->
+
+NamensKürzel: Kurzbeschreibung der Änderung in der ersten Zeile
+
+
+
 
 
 
-<!-- Bei Ã„nderungen innerhalb des Dokumentes -->
-NamensKÃ¼rzel: Kurzbeschreibung der Ã„nderung in der ersten Zeile
 
-WELCHE Ã„NDERUNGEN HABE ICH VORGENOMMEN / WAS Ã„NDERT SICH FÃœR DEN ANWENDER?
+
+<!-- Bei Änderungen innerhalb des Dokumentes -->
+
+NamensKürzel: Kurzbeschreibung der Änderung in der ersten Zeile
+
+
+
+
+
+
+WELCHE ÄNDERUNGEN HABE ICH VORGENOMMEN / WAS ÄNDERT SICH FÜR DEN ANWENDER?
+
 xxx
 
-WELCHE QUELLCODEÃ„NDERUNGEN WURDEN HIERFÃœR VORGENOMMEN?
+
+
+
+WELCHE QUELLCODEÄNDERUNGEN WURDEN HIERFÜR VORGENOMMEN?
+
 xxx
 
 
+
+
 
-BEISPIEL: STRUKTUR ODER NAMENSÃ„NDERUNG:
+
+
+
+
+BEISPIEL: STRUKTUR ODER NAMENSÄNDERUNG:
+
 TR: Erstellen der Dateien songtexte.html & songtexte.css
 
 
-BEISPIEL: Ã„NDERUNG DES DOKUMENTES:
-TR: Grundlayout fÃ¼r die Seite songtexte.html erstellt
+
 
-WELCHE Ã„NDERUNGEN HABE ICH VORGENOMMEN / WAS Ã„NDERT SICH FÃœR DEN ANWENDER?
-Es ist nun mÃ¶glich eine Liste der bisher vorhanden Songtexte anzuzeigen.
+
+
+BEISPIEL: ÄNDERUNG DES DOKUMENTES:
+
+TR: Grundlayout für die Seite songtexte.html erstellt
+
+
+
+WELCHE ÄNDERUNGEN HABE ICH VORGENOMMEN / WAS ÄNDERT SICH FÜR DEN ANWENDER?
+
+Es ist nun möglich eine Liste der bisher vorhanden Songtexte anzuzeigen.
+
 Der Aufbau ist ie folgt:
+
 Auf der linken Seite ist ein Logo/Cover des Songtextes zu sehen, rechts davon der Interpret & Titel des Songs.
+
 Durch klick auf den Song gelant wird der entsprechende Songtext inkl. der Noten geladen und angezeigt.
 
-WELCHE QUELLCODEÃ„NDERUNGEN WURDEN HIERFÃœR VORGENOMMEN?
-In der CSS-Datei songtexte.css wurden die Klassen "song", "icon", "description" und "title" hinzugefÃ¼gt.
-Diese sind verantwortlich fÃ¼r die Darstellung der einzelnen Songs auf der Seite Songtexte.html
-In der HTML-Datei wurden die ersten Songtexte hinzugefÃ¼gt.
+
+
+WELCHE QUELLCODEÄNDERUNGEN WURDEN HIERFÜR VORGENOMMEN?
+
+In der CSS-Datei songtexte.css wurden die Klassen "song", "icon", "description" und "title" hinzugefügt.
+
+Diese sind verantwortlich für die Darstellung der einzelnen Songs auf der Seite Songtexte.html
+
+In der HTML-Datei wurden die ersten Songtexte hinzugefügt.
