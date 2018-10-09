@@ -12,8 +12,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
 
-    <!-- Eigene Stylesheets -->
+    <!-- Eigene Stylesheets & Scripte-->
     <link rel="stylesheet" href="css/songtexte.css" />
+    <script src="js/songtexte.js"></script>
 </head>
 
 <body>
@@ -39,12 +40,12 @@
     <!-- Seiteninhalt -->
     <main>
         <!-- Liste der Songtexte -->
-        <section class="container">
+        <section class="container" id="songtexte">
             <!--Überschrift-->
             <h1>
                 Songtexte
             </h1>
-            
+
             <!--Anfang eines Song Elements-->
             <a href="#ein-kompliment">
                 <div class="song">
@@ -58,7 +59,7 @@
                 </div>
             </a>
             <!--Ende eines Song Elements-->
-            
+
             <!--Anfang eines Song Elements-->
             <a href="#kameradenlied">
                 <div class="song">
@@ -67,19 +68,19 @@
                         <span class="title">
                             Kameradenlied
                         </span>
-                        <br>Lager-Team
+                        <br>Lagerteam
                     </div>
                 </div>
             </a>
             <!--Ende eines Song Elements-->
-            
+
             <!--Anfang eines Song Elements-->
             <a href="#bws">
                 <div class="song">
                     <div class="icon"><img src="" alt="💿"></div>
                     <div class="description">
                         <span class="title">
-                            Belibiger weiterer Song
+                            Beliebiger weiterer Song
                         </span>
                         <br>Interpret des Songs
                     </div>
@@ -87,8 +88,88 @@
             </a>
             <!--Ende eines Song Elements-->
         </section>
+        
+        <!--Beginn Songtext Section-->
+        <section class="container" id="showSong">
+            <h3>
+                <!--Buttons zur Steuerung der Scroll-Funktion-->
+                <a href=""><button type="button" class="backbutton btn btn-dark">◄ &nbsp; Zurück zur Auswahl</button></a>
+                <button type="button" class="minusButton btn btn-dark" id="minusButton" onclick="slowDownScroll();">➖</button>
+                <button type="button" class="plusButton btn btn-dark" id="plusButton" onclick="speedUpScroll();">➕</button>
+                <button type="button" class="autoscrollbutton btn btn-dark" onclick="pageScroll();" id="pageScrollButton">► &nbsp; aktiviere auto-scroll</button>
+            </h3>
+            <!--Platzhalter für den Titel eines Songs-->
+            <h3><div id="songtitle">Songtext Title</div></h3>
+            <!--Platzhalter für den Text eines Songs-->
+            <div id="songtext">Songtext</div>
+        </section>
+        <!--Ende Songtext Section-->
     </main>
 
 </body>
+
+<!--Das folgende Script enthält die Logik der scroll-Funktion:
+Die scroll-Funktion ermöglicht es dem Anwender die Seite automaitsch hinunter zu scrollen.
+Des Weiteren lässt sich die Geschwindigkeit des scrollen einstellen.-->
+<script>
+    /**
+    Variablen für die Buttons aus dem HTML-Dokument anlegen und zuweisen
+    Variable zum Steuern der Scroll Geschwindigkeit anlegen und Default Wert zuweisen
+    **/
+    let scrollButton = document.getElementById("pageScrollButton");
+    let plusButton = document.getElementById("plusButton");
+    let minusButton = document.getElementById("minusButton");
+    let delayOfScroll = 100;
+    
+    /**
+    Funktion um das automatische scrollen der Seite zu starten.
+    Das onclick Attribut des ScrollButtons wird dahingehend verändert, das bei erneutem klicken die stopScroll() Funktion aufgerufen wird.
+    Die Position der Buttons wird angepasst und auf fixed gesetzt, um zu verhindern das sie bei zu weitem Scrollen aus der Bildfläche verschwinden. 
+    Der Inhalt des scrollButtons wird verändert um dem Anwender zu signalisieren, dass die Seite gescrollt wird und er durch erneutes klicken das scrollen anhalten kann.
+    Die Seite wird nach einem Vordefinierten Delay von 100ms um jeweils einen Pixel hinuntergescrollt und auf der Console wird signalisiert, dass die Seite gescrollt wird. 
+    Das scrollen von nur einem Pixel je 100ms ermöglicht eine sehr flüssige Bewegung.
+    **/
+    function pageScroll() {
+        scrollButton.setAttribute("onclick","stopScroll()");
+        scrollButton.classList.add("position-fixed");
+        plusButton.classList.add("position-fixed");
+        minusButton.classList.add("position-fixed");
+        scrollButton.innerHTML = "&#10074;&#10074; &nbsp; scroll";
+        window.scrollBy(0,1);
+        scrolldelay = setTimeout(pageScroll,delayOfScroll);
+        console.log("scrolling down");
+    }
+    
+    /**
+    Funktion um das automatische scrollen der Seite zu stopen.
+    Das onclick Attribut des ScrollButtons wird dahingehend verändert, das bei erneutem klicken die pageScroll() Funktion aufgerufen wird.
+    Die Position der Buttons wird angepasst und das fixed Attribut entfernt, um die Button an die ursprünglich definierte Position zu bewegen. 
+    Der Inhalt des scrollButtons wird verändert um dem Anwender zu signalisieren, dass die Seite nicht gescrollt wird und er durch erneutes klicken das scrollen starten kann.
+    Die pageScroll Funktion wird beendet und auf der Console wird ausgegeben, dass die Seite nicht gescrollt wird.
+    **/
+    function stopScroll() {
+        scrollButton.setAttribute("onclick","pageScroll()");
+        scrollButton.classList.remove("position-fixed");
+        plusButton.classList.remove("position-fixed");
+        minusButton.classList.remove("position-fixed");
+        scrollButton.innerHTML = "► &nbsp; aktiviere auto-scroll";
+        clearInterval(scrolldelay);
+        console.log("stop scrolling down");
+    }
+    
+    /**
+    Funktion um die Geschwindigkeit des scrollen um 1.5x zu verringern
+    **/
+    function slowDownScroll(){
+        delayOfScroll = delayOfScroll * 1.5;
+    }
+    
+    /**
+    Funktion um die Geschwindigkeit des scrollen um 1.5x zu erhöhen
+    **/
+    function speedUpScroll(){
+        delayOfScroll = delayOfScroll / 1.5;
+    }
+</script>
 
 </html>
