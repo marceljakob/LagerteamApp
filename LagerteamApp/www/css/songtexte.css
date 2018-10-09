@@ -1,9 +1,20 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+*{
+    font-family: 'Raleway', sans-serif;
+}
+
 .hidden{
     display: none;
 }
 
 .container > h1{
     margin-top: 0.8em;
+    margin-bottom: 0.6em;
+}
+
+.container > h3{
+    margin-top: 1.5em;
     margin-bottom: 0.6em;
 }
 
@@ -19,7 +30,7 @@
     border-color: lightgray;
     padding: 0.5em;
     margin-bottom: 1em;
-    width: 25em;
+    width: 100%;
     color: rgba(25, 25, 25);
 }
 
@@ -45,4 +56,34 @@
 .song > .description{
     display: inline-block;
     margin-left: 1em;
+}
+
+.backbutton{
+    margin-right: 1em;
+}
+
+.autoscrollbutton{
+    float: right;
+    right: 120px;
+}
+
+.plusButton{
+    float: right;
+    right: 70px;
+    margin-left: 0.5em;
+}
+
+.minusButton{
+    float: right;
+    right: 20px;
+    margin-left: 0.5em;
+}
+
+#songtitle{
+    display: inline-block;
+}
+
+#songtext > img{
+    width: 117%;
+    margin-left: -11%;
 }
