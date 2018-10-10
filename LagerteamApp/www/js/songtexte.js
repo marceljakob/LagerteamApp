@@ -15,7 +15,13 @@ window.addEventListener("load", () => {
 
     /** Variablen um Titel und Texte der einzelnen Songs zu speichern **/
     let title_einKompliment = "";
-    let text_einKompliment = "<img src='./img/ein-kompliment.png' width='100%'></img>";
+    let text_einKompliment = "<img src='./img/songtexte/ein-kompliment.png' width='100%' id='songImg'></img>";
+    let title_kameradenlied = "Kameradenlied";
+    let text_kameradenlied = "Text noch unbekannt";
+    let title_takeMeHomeCountryRoads = "";
+    let text_takeMeHomeCountryRoads = "<img src='./img/songtexte/Take-Me-Home-Country-Roads_Seite_1.png' width='100%' id='songImg'></img><img src='./img/songtexte/Take-Me-Home-Country-Roads_Seite_2.png' width='100%' id='songImg'></img>";
+    let title_knockinOnHeavensDoor = "";
+    let text_knockinOnHeavensDoor = "<img src='./img/songtexte/Knockin-On-Heavens-Door_Seite_1.png' width='100%' id='songImg'></img><img src='./img/songtexte/Knockin-On-Heavens-Door_Seite_2.png' width='100%' id='songImg'></img>";
 
     /** Prüfen ob Anchor leer ist **/
     if (anchor != "") {
@@ -31,6 +37,14 @@ window.addEventListener("load", () => {
             case "#kameradenlied":
                 songtitle.innerHTML = "Lagerteam - Kameradenlied";
                 songtext.innerHTML = "Songtext des Songs";
+                break;
+            case "#take-me-home-country-roads":
+                songtitle.innerHTML = title_takeMeHomeCountryRoads;
+                songtext.innerHTML = text_takeMeHomeCountryRoads;
+                break;
+            case "#knockin-on-heavens-door":
+                songtitle.innerHTML = title_knockinOnHeavensDoor;
+                songtext.innerHTML = text_knockinOnHeavensDoor;
                 break;
             case "#bws":
                 songtitle.innerHTML = "Interpret des Songs - Beliebiger weiterer Song";
