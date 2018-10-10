@@ -19,7 +19,7 @@
 
 <body>
     <!-- Navigationsleiste -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <a class="navbar-brand" href="#">Logo</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -73,6 +73,34 @@
                 </div>
             </a>
             <!--Ende eines Song Elements-->
+            
+            <!--Anfang eines Song Elements-->
+            <a href="#take-me-home-country-roads">
+                <div class="song">
+                    <div class="icon"><img src="https://img.discogs.com/sh4ABlaRGhPpPSvfp9UZL78R4JQ=/fit-in/300x300/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-4434565-1449776530-4843.jpeg.jpg" alt="💿"></div>
+                    <div class="description">
+                        <span class="title">
+                            Take Me Home Country Roads
+                        </span>
+                        <br>John Denver
+                    </div>
+                </div>
+            </a>
+            <!--Ende eines Song Elements-->
+            
+            <!--Anfang eines Song Elements-->
+            <a href="#knockin-on-heavens-door">
+                <div class="song">
+                    <div class="icon"><img src="https://img.discogs.com/TyqjgM_eIWjXtbBSBFHn6Wt7KKQ=/fit-in/599x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-1786527-1371805380-4334.jpeg.jpg" alt="💿"></div>
+                    <div class="description">
+                        <span class="title">
+                            Knockin On Heavens Door
+                        </span>
+                        <br>Guns n Roses
+                    </div>
+                </div>
+            </a>
+            <!--Ende eines Song Elements-->
 
             <!--Anfang eines Song Elements-->
             <a href="#bws">
@@ -92,14 +120,17 @@
         <!--Beginn Songtext Section-->
         <section class="container" id="showSong">
             <h3>
-                <!--Buttons zur Steuerung der Scroll-Funktion-->
+                <!-- Zurück Button-->
                 <a href=""><button type="button" class="backbutton btn btn-dark">◄ &nbsp; Zurück zur Auswahl</button></a>
+                <button type="button" class="zoomInButton btn btn-dark" id="zoomInButton" onclick="zoomIn();">🔍➕</button>
+                <button type="button" class="zoomOutButton btn btn-dark disabled" id="zoomOutButton" onclick="zoomOut();">🔍➖</button>
+                <!--Buttons zur Steuerung der Scroll-Funktion-->
                 <button type="button" class="minusButton btn btn-dark" id="minusButton" onclick="slowDownScroll();">➖</button>
                 <button type="button" class="plusButton btn btn-dark" id="plusButton" onclick="speedUpScroll();">➕</button>
-                <button type="button" class="autoscrollbutton btn btn-dark" onclick="pageScroll();" id="pageScrollButton">► &nbsp; aktiviere auto-scroll</button>
+                <button type="button" class="autoscrollbutton btn btn-dark" onclick="pageScroll();" id="pageScrollButton">► &nbsp; aktiviere auto-scroll (Speed x1.0)</button>
             </h3>
             <!--Platzhalter für den Titel eines Songs-->
-            <h3><div id="songtitle">Songtext Title</div></h3>
+            <h4><div id="songtitle">Songtext Title</div></h4>
             <!--Platzhalter für den Text eines Songs-->
             <div id="songtext">Songtext</div>
         </section>
@@ -120,6 +151,7 @@ Des Weiteren lässt sich die Geschwindigkeit des scrollen einstellen.-->
     let plusButton = document.getElementById("plusButton");
     let minusButton = document.getElementById("minusButton");
     let delayOfScroll = 100;
+    let speed = 1;
     
     /**
     Funktion um das automatische scrollen der Seite zu starten.
@@ -134,7 +166,7 @@ Des Weiteren lässt sich die Geschwindigkeit des scrollen einstellen.-->
         scrollButton.classList.add("position-fixed");
         plusButton.classList.add("position-fixed");
         minusButton.classList.add("position-fixed");
-        scrollButton.innerHTML = "&#10074;&#10074; &nbsp; scroll";
+        scrollButton.innerHTML = "&#10074;&#10074; &nbsp; scroll (Speed x"+speed.toFixed(1)+")";
         window.scrollBy(0,1);
         scrolldelay = setTimeout(pageScroll,delayOfScroll);
         console.log("scrolling down");
@@ -161,14 +193,45 @@ Des Weiteren lässt sich die Geschwindigkeit des scrollen einstellen.-->
     Funktion um die Geschwindigkeit des scrollen um 1.5x zu verringern
     **/
     function slowDownScroll(){
-        delayOfScroll = delayOfScroll * 1.5;
+        if(speed>0){
+            delayOfScroll = delayOfScroll * 1.5;
+            speed = speed-.5;
+            plusButton.classList.remove("disabled");
+            if(speed==0){
+                minusButton.classList.add("disabled");
+            }
+        }
     }
     
     /**
     Funktion um die Geschwindigkeit des scrollen um 1.5x zu erhöhen
     **/
     function speedUpScroll(){
-        delayOfScroll = delayOfScroll / 1.5;
+        if(speed<5){
+            delayOfScroll = delayOfScroll / 1.5;
+            speed = speed+.5;
+            minusButton.classList.remove("disabled");
+            if(speed==5){
+                plusButton.classList.add("disabled");
+            }
+        }
+    }
+    
+    
+    let songImg = document.getElementById("songtext");
+    let zoomInButton = document.getElementById("zoomInButton");
+    let zoomOutButton = document.getElementById("zoomOutButton");
+    
+    function zoomIn(){
+        songImg.classList.add("zoom");
+        zoomInButton.classList.add("disabled");
+        zoomOutButton.classList.remove("disabled");
+    }
+    
+    function zoomOut(){
+        songImg.classList.remove("zoom");
+        zoomInButton.classList.remove("disabled");
+        zoomOutButton.classList.add("disabled");
     }
 </script>
 
