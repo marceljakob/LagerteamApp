@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 
 <head>
     <meta charset="UTF-8">
@@ -40,7 +40,7 @@
     <!-- Seiteninhalt -->
     <main>
         <!-- Liste der Songtexte -->
-        <section class="container" id="songtexte">
+        <section class="container container-navbar-fixed" id="songtexte">
             <!--Überschrift-->
             <h1>
                 Songtexte
@@ -73,7 +73,7 @@
                 </div>
             </a>
             <!--Ende eines Song Elements-->
-            
+
             <!--Anfang eines Song Elements-->
             <a href="#take-me-home-country-roads">
                 <div class="song">
@@ -87,7 +87,7 @@
                 </div>
             </a>
             <!--Ende eines Song Elements-->
-            
+
             <!--Anfang eines Song Elements-->
             <a href="#knockin-on-heavens-door">
                 <div class="song">
@@ -116,7 +116,7 @@
             </a>
             <!--Ende eines Song Elements-->
         </section>
-        
+
         <!--Beginn Songtext Section-->
         <section class="container" id="showSong">
             <h3>
@@ -130,7 +130,11 @@
                 <button type="button" class="autoscrollbutton btn btn-dark" onclick="pageScroll();" id="pageScrollButton">► &nbsp; aktiviere auto-scroll (Speed x1.0)</button>
             </h3>
             <!--Platzhalter für den Titel eines Songs-->
-            <h4><div id="songtitle">Songtext Title</div></h4>
+            <h4>
+                <div id="songtitle">Songtext Title</div>
+            </h4>
+        </section>
+        <section class="container" id="songtextSection">
             <!--Platzhalter für den Text eines Songs-->
             <div id="songtext">Songtext</div>
         </section>
@@ -152,7 +156,7 @@ Des Weiteren lässt sich die Geschwindigkeit des scrollen einstellen.-->
     /** Variablen um Scroll-Geschwindigkeit zu steuern und anzuzeigen **/
     let delayOfScroll = 100;
     let speed = 1;
-    
+
     /**
     Funktion um das automatische scrollen der Seite zu starten.
     Das onclick Attribut des ScrollButtons wird dahingehend verändert, das bei erneutem klicken die stopScroll() Funktion aufgerufen wird.
@@ -163,16 +167,16 @@ Des Weiteren lässt sich die Geschwindigkeit des scrollen einstellen.-->
     Das scrollen von nur einem Pixel je 100ms ermöglicht eine sehr flüssige Bewegung.
     **/
     function pageScroll() {
-        scrollButton.setAttribute("onclick","stopScroll()");
+        scrollButton.setAttribute("onclick", "stopScroll()");
         scrollButton.classList.add("position-fixed");
         plusButton.classList.add("position-fixed");
         minusButton.classList.add("position-fixed");
-        scrollButton.innerHTML = "&#10074;&#10074; &nbsp; scroll (Speed x"+speed.toFixed(1)+")";
-        window.scrollBy(0,1);
-        scrolldelay = setTimeout(pageScroll,delayOfScroll);
+        scrollButton.innerHTML = "&#10074;&#10074; &nbsp; scroll (Speed x" + speed.toFixed(1) + ")";
+        window.scrollBy(0, 1);
+        scrolldelay = setTimeout(pageScroll, delayOfScroll);
         console.log("scrolling down");
     }
-    
+
     /**
     Funktion um das automatische scrollen der Seite zu stopen.
     Das onclick Attribut des ScrollButtons wird dahingehend verändert, das bei erneutem klicken die pageScroll() Funktion aufgerufen wird.
@@ -181,7 +185,7 @@ Des Weiteren lässt sich die Geschwindigkeit des scrollen einstellen.-->
     Die pageScroll Funktion wird beendet und auf der Console wird ausgegeben, dass die Seite nicht gescrollt wird.
     **/
     function stopScroll() {
-        scrollButton.setAttribute("onclick","pageScroll()");
+        scrollButton.setAttribute("onclick", "pageScroll()");
         scrollButton.classList.remove("position-fixed");
         plusButton.classList.remove("position-fixed");
         minusButton.classList.remove("position-fixed");
@@ -189,7 +193,7 @@ Des Weiteren lässt sich die Geschwindigkeit des scrollen einstellen.-->
         clearInterval(scrolldelay);
         console.log("stop scrolling down");
     }
-    
+
     /**
     Funktion um die Geschwindigkeit des scrollen um x1.5 zu verringern
     Es wird geprüft ob die Geschwindigkeit bereits die Untergrenze von 0 erreicht hat.
@@ -197,17 +201,17 @@ Des Weiteren lässt sich die Geschwindigkeit des scrollen einstellen.-->
     Für den Fall, das die Geschwindigkeit zuvor am Maximum war, wird der plusButton wieder aktiviert.
     Zuletzt wird geprüft ob die Geschwindigkeit nun das Minimum erreicht hat, falls dem so ist, wird der minusButton deaktiviert.
     **/
-    function slowDownScroll(){
-        if(speed>0){
+    function slowDownScroll() {
+        if (speed > 0) {
             delayOfScroll = delayOfScroll * 1.5;
-            speed = speed-.5;
+            speed = speed - .5;
             plusButton.classList.remove("disabled");
-            if(speed==0){
+            if (speed == 0) {
                 minusButton.classList.add("disabled");
             }
         }
     }
-    
+
     /**
     Funktion um die Geschwindigkeit des scrollen um x1.5 zu erhöhen
     Es wird geprüft ob die Geschwindigkeit bereits die Obergrenze von 5 erreicht hat.
@@ -215,42 +219,42 @@ Des Weiteren lässt sich die Geschwindigkeit des scrollen einstellen.-->
     Für den Fall, das die Geschwindigkeit zuvor am Minimum war, wird der minusButton wieder aktiviert.
     Zuletzt wird geprüft ob die Geschwindigkeit nun das Maximum erreicht hat, falls dem so ist, wird der plusButton deaktiviert.
     **/
-    function speedUpScroll(){
-        if(speed<5){
+    function speedUpScroll() {
+        if (speed < 5) {
             delayOfScroll = delayOfScroll / 1.5;
-            speed = speed+.5;
+            speed = speed + .5;
             minusButton.classList.remove("disabled");
-            if(speed==5){
+            if (speed == 5) {
                 plusButton.classList.add("disabled");
             }
         }
     }
-    
+
     /** Variablen für die Buttons aus dem HTML Dokument anlegen und zuweisen **/
-    let songImg = document.getElementById("songtext");
+    let songImg = document.getElementById("songtextSection");
     let zoomInButton = document.getElementById("zoomInButton");
     let zoomOutButton = document.getElementById("zoomOutButton");
-    
+
     /** 
     zoomIn Funktion um den Songtext zu vergrößern.
-    Dem Songtext wird die Klasse zoom zugewiesen.
+    Der Songtext Section wird die Klasse container entfernt.
     Der zoomInButton wird deaktiviert.
     Der zoomOutButton wird aktiviert.
     **/
-    function zoomIn(){
-        songImg.classList.add("zoom");
+    function zoomIn() {
+        songImg.classList.remove("container");
         zoomInButton.classList.add("disabled");
         zoomOutButton.classList.remove("disabled");
     }
-    
+
     /** 
     zoomOut Funktion um den Songtext zu verkleinern.
-    Dem Songtext wird die Klasse zoom entfernt.
+    Der Songtext Section wird die Klasse container hinzugefügt.
     Der zoomInButton wird aktiviert.
     Der zoomOutButton wird deaktiviert.
     **/
-    function zoomOut(){
-        songImg.classList.remove("zoom");
+    function zoomOut() {
+        songImg.classList.add("container");
         zoomInButton.classList.remove("disabled");
         zoomOutButton.classList.add("disabled");
     }
