@@ -1,0 +1,33 @@
+/** Datei beeinhaltet alle Änderungen die jede HTML-Datei betreffen sollten **/
+
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+*{
+    font-family: 'Raleway', sans-serif;
+}
+
+.hidden{
+    display: none;
+}
+
+.container-navbar-fixed{
+    margin-top: 5em;
+}
+
+.container > h1{
+    margin-bottom: 0.6em;
+}
+
+.container > h3{
+    margin-top: 2.9em;
+    margin-bottom: 0.6em;
+}
+
+.container > h4{
+    margin-top: 1.4em;
+    margin-bottom: 0.6em;
+}
+
+.container > a:hover{
+    text-decoration: none;
+}
