@@ -1,0 +1,19 @@
+.container > h4{
+    margin-top: 1.8em;
+}
+
+form{
+    margin-top: .4em;
+}
+
+.table{
+    margin-top: 12pt;
+}
+
+.nowrap{
+    white-space:nowrap;
+}
+
+#newsticker > h4 > form{
+    margin-bottom: 35pt;
+}
