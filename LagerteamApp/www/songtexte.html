@@ -244,6 +244,7 @@ Des Weiteren lässt sich die Geschwindigkeit des scrollen einstellen.-->
     **/
     function zoomIn() {
         songImg.classList.remove("container");
+        songImg.style.marginLeft = "15pt";
         zoomInButton.classList.add("disabled");
         zoomOutButton.classList.remove("disabled");
     }
@@ -256,6 +257,7 @@ Des Weiteren lässt sich die Geschwindigkeit des scrollen einstellen.-->
     **/
     function zoomOut() {
         songImg.classList.add("container");
+        songImg.style.marginLeft = "";
         zoomInButton.classList.remove("disabled");
         zoomOutButton.classList.add("disabled");
     }
