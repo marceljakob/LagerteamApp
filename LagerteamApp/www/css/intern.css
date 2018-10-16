@@ -17,3 +17,7 @@ form{
 #newsticker > h4 > form{
     margin-bottom: 35pt;
 }
+
+#errormsg{
+    color: crimson;
+}
