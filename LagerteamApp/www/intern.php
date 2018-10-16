@@ -85,7 +85,7 @@ if ($result_getNews->num_rows > 0) {
                 <a class="nav-item nav-link active" href="">Intern <span class="sr-only">(current)</span></a>
             </div>
         </div>
-        <a href="logoutIntern.php"><button class="btn btn-danger">logout</button></a>
+        <a href="logoutIntern.php"><button class="btn btn-danger">logout</button></a> 
     </nav>
 
     <!-- Seiteninhalt -->
