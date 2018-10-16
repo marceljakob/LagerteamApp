@@ -7,6 +7,13 @@ include 'dbConnect.php';
 /* Session starten um Benutzerdaten zu speichern */
 session_start();
 
+/* Wenn keine Session vorhanden, Zugriff auf die Seite verweigern und auf die Login Seite umleiten. */
+if(!isset($_SESSION["username"])) 
+{
+    header("Location: loginIntern.php");
+    exit; 
+}
+
 /*
 Update des Newstickers an Server
 Prüfen ob POST-Message existiert
@@ -32,7 +39,7 @@ SQL-Befehl erstellen und an Datenbank übermitteln
 Ergebnis auf Inhalt prüfen
 Ergebnis in Variable speichern
 */
-$sql_getNews = "SELECT text FROM newsticker ORDER BY id DESC";
+$sql_getNews = "SELECT text FROM newsticker ORDER BY newsticker_id DESC";
 $result_getNews = $conn->query($sql_getNews);
 $newstickerText = "";
 if ($result_getNews->num_rows > 0) {
@@ -78,6 +85,7 @@ if ($result_getNews->num_rows > 0) {
                 <a class="nav-item nav-link active" href="">Intern <span class="sr-only">(current)</span></a>
             </div>
         </div>
+        <a href="logoutIntern.php"><button class="btn btn-danger">logout</button></a>
     </nav>
 
     <!-- Seiteninhalt -->
@@ -117,7 +125,7 @@ if ($result_getNews->num_rows > 0) {
             </h4>
             <hr>
         </section>
-        
+
         <!-- Zweite Section Intern onlineAnmeldungen -->
         <section class="container container-navbar-fixed hidden" id="onlineAnmeldungen">
             <!--Überschrift Section-->
@@ -149,7 +157,7 @@ if ($result_getNews->num_rows > 0) {
                         </tr>
                     </thead>
                     <tbody id="onlineAnmeldungenBody">
-                       <?php
+                        <?php
                         //Datenbankabfrage um alle relevanten Daten bzgl. der Online-Anmeldungen zu erhalten.
                         $sql = "SELECT anmelde_dat, n_name, v_name, strasse_nr, plz, ort, geb_dat, telefon, email, zuschuss, mitglied, freitext FROM anmeldungen ORDER BY n_name";
                         $result = $conn->query($sql);
@@ -194,12 +202,12 @@ if ($result_getNews->num_rows > 0) {
                             echo "0 results";
                         }
                         ?>
-                        
+
                     </tbody>
                 </table>
             </div>
         </section>
-        
+
     </main>
 
 </body>
@@ -213,13 +221,13 @@ if ($result_getNews->num_rows > 0) {
     Die Filter-Funktion darf ausschließlich auf den Body-Teil der Tabelle angewandt werden, da ansonsten auch der Head Bereich gefiltert wird und somit ausgeblendet wird.
     Die Filter-Funktion zeigt ausschließlich die Zeilen an, in denen der in der Variable "value" gespeicherte String vorhanden ist.
     */
-    $(document).ready(function(){
-      $("#searchBar").on("keyup", function() {
-        var value = $(this).val().toLowerCase();
-        $("#onlineAnmeldungenBody tr").filter(function() {
-          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    $(document).ready(function() {
+        $("#searchBar").on("keyup", function() {
+            var value = $(this).val().toLowerCase();
+            $("#onlineAnmeldungenBody tr").filter(function() {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
         });
-      });
     });
 </script>
 
