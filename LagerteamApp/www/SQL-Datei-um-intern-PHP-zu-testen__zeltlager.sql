@@ -21,7 +21,8 @@ SET time_zone = "+00:00";
 --
 -- Datenbank: `zeltlager`
 --
-
+CREATE DATABASE IF NOT EXISTS `zeltlager` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `zeltlager`;
 -- --------------------------------------------------------
 
 --
