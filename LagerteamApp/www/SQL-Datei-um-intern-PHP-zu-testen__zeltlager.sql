@@ -26,6 +26,27 @@ USE `zeltlager`;
 -- --------------------------------------------------------
 
 --
+-- Tabellenstruktur für Tabelle `admins`
+--
+
+CREATE TABLE `admins` (
+  `admin_id` int(11) NOT NULL,
+  `username` varchar(20) NOT NULL,
+  `password` varchar(60) NOT NULL,
+  `fehlanmeldungen` int(1) NOT NULL,
+  `gesperrt` bit(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Daten für Tabelle `admins`
+--
+
+INSERT INTO `admins` (`admin_id`, `username`, `password`, `fehlanmeldungen`, `gesperrt`) VALUES
+(1, 'tim', '$2y$10$fXZo3saweCMDys.76uFHze/1.vStMbGCex8tyDrvsELTxNRZ9gNVS', 0, b'0');
+
+-- --------------------------------------------------------
+
+--
 -- Tabellenstruktur für Tabelle `anmeldungen`
 --
 
@@ -59,11 +80,25 @@ INSERT INTO `anmeldungen` (`anmeldung_id`, `anmelde_dat`, `n_name`, `v_name`, `s
 -- --------------------------------------------------------
 
 --
+-- Tabellenstruktur für Tabelle `kontaktformular`
+--
+
+CREATE TABLE `kontaktformular` (
+  `kontakt_id` int(11) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `telefon` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `nachricht` varchar(5000) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Tabellenstruktur für Tabelle `newsticker`
 --
 
 CREATE TABLE `newsticker` (
-  `id` int(11) NOT NULL,
+  `newsticker_id` int(11) NOT NULL,
   `text` varchar(60) NOT NULL,
   `datum` datetime NOT NULL,
   `kuerzel` varchar(2) NOT NULL
@@ -73,12 +108,18 @@ CREATE TABLE `newsticker` (
 -- Daten für Tabelle `newsticker`
 --
 
-INSERT INTO `newsticker` (`id`, `text`, `datum`, `kuerzel`) VALUES
+INSERT INTO `newsticker` (`newsticker_id`, `text`, `datum`, `kuerzel`) VALUES
 (112, '+++ Neue News fÃ¼r alle Zeltlager Teilnehmer 2018 +++', '2018-10-15 19:54:27', 'tr');
 
 --
 -- Indizes der exportierten Tabellen
 --
+
+--
+-- Indizes für die Tabelle `admins`
+--
+ALTER TABLE `admins`
+  ADD PRIMARY KEY (`admin_id`);
 
 --
 -- Indizes für die Tabelle `anmeldungen`
@@ -87,14 +128,26 @@ ALTER TABLE `anmeldungen`
   ADD PRIMARY KEY (`anmeldung_id`);
 
 --
+-- Indizes für die Tabelle `kontaktformular`
+--
+ALTER TABLE `kontaktformular`
+  ADD PRIMARY KEY (`kontakt_id`);
+
+--
 -- Indizes für die Tabelle `newsticker`
 --
 ALTER TABLE `newsticker`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`newsticker_id`);
 
 --
 -- AUTO_INCREMENT für exportierte Tabellen
 --
+
+--
+-- AUTO_INCREMENT für Tabelle `admins`
+--
+ALTER TABLE `admins`
+  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT für Tabelle `anmeldungen`
@@ -103,10 +156,16 @@ ALTER TABLE `anmeldungen`
   MODIFY `anmeldung_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
+-- AUTO_INCREMENT für Tabelle `kontaktformular`
+--
+ALTER TABLE `kontaktformular`
+  MODIFY `kontakt_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT für Tabelle `newsticker`
 --
 ALTER TABLE `newsticker`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=113;
+  MODIFY `newsticker_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=113;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
