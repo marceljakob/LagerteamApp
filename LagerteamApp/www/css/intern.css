@@ -21,3 +21,40 @@ form{
 #errormsg{
     color: crimson;
 }
+
+.loginForm{
+    margin-top: 150pt;
+    width: 320pt;
+    padding-top: 15pt;
+    padding-bottom: 15pt;
+    padding-left: 25pt;
+    padding-right: 25pt;
+    border-radius: 4pt;
+    background-color: #343a40;
+    color: ghostwhite;
+    box-shadow: 0 0 2px #333;
+}
+
+h2{
+    margin-bottom: 10pt;
+}
+
+.form-margin{
+    margin-bottom: 12pt;
+}
+
+hr{
+    margin-bottom: 20pt;
+    margin-top: 15pt;
+    border-color: darkgray;
+}
+
+.margin-top-plus{
+    margin-top: 12pt;
+    margin-bottom: 6pt;
+}
+
+.btn-long{
+    padding-left: 40pt;
+    padding-right: 40pt;
+}
