@@ -87,13 +87,13 @@ if(!empty($_POST['username'])) {
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-item nav-link active" href="#">Menü  <span class="sr-only">(current)</span></a>
-                <a class="nav-item nav-link" href="#">Online-Anmeldung</a>
-                <a class="nav-item nav-link" href="#">Kalender</a>
-                <a class="nav-item nav-link" href="#">Galerie</a>
-                <a class="nav-item nav-link" href="#">Songtexte</a>
-                <a class="nav-item nav-link" href="#">Kontakt</a>
-                <a class="nav-item nav-link" href="#">Intern</a>
+                <a class="nav-item nav-link active" href="./">Menü  <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="">Online-Anmeldung</a>
+                <a class="nav-item nav-link" href="kalender.html">Kalender</a>
+                <a class="nav-item nav-link" href="galerie.html">Galerie</a>
+                <a class="nav-item nav-link" href="songtexte.html">Songtexte</a>
+                <a class="nav-item nav-link" href="kontakt.html">Kontakt</a>
+                <a class="nav-item nav-link" href="intern.php">Intern</a>
             </div>
         </div>
     </nav>
@@ -105,30 +105,37 @@ if(!empty($_POST['username'])) {
         Beeinhaltet die Klasse "container-navbar-fixed".
         Zuständig für den margin-top Abstand von der fixed-Navbar.
         -->
-        <section class="container container-navbar-fixed">
-            <h1>Login für Admins</h1>
+        <section class="container container-navbar-fixed loginForm">
+            <h3><center>Login als Admin</center></h3>
+            <hr>
             <h5 id="errormsg"></h5>           
             <form action="loginIntern.php" method="post">
                     <div class="form-row">
-                        <div class="col-md-5">
+                        <div class="col-md-12">
                             <label class="sr-only" for="inlineFormInputGroup">LoginUsername</label>
-                            <div class="input-group">
+                            <div class="input-group form-margin">
                                 <div class="input-group-prepend">
-                                    <div class="input-group-text" id="newsStatus">Benutzername: </div>
+                                    <div class="input-group-text" id="newsStatus">👤&#xFE0E;</div>
                                 </div>
-                                <input type="text" class="form-control" id="username" name="username" aria-describedby="Benutzername eintragen" id="inlineFormInputGroup" required>
+                                <input type="text" class="form-control" id="username" name="username" placeholder="Benutzername" aria-describedby="Benutzername eintragen" id="inlineFormInputGroup" required>
                             </div>
                         </div>
-                        <div class="col-md-4">
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-12">
                             <label class="sr-only" for="inlineFormInputGroup">LoginPassword</label>
-                            <div class="input-group">
+                            <div class="input-group form-margin">
                                 <div class="input-group-prepend">
-                                    <div class="input-group-text" id="newsStatus">Passwort: </div>
+                                    <div class="input-group-text" id="newsStatus">🔒&#xFE0E;</div>
                                 </div>
-                                <input type="password" class="form-control" id="password" name="password" aria-describedby="Benutzername eintragen" id="inlineFormInputGroup" required>
+                                <input type="password" class="form-control" id="password" name="password" placeholder="Passwort" aria-describedby="Benutzername eintragen" id="inlineFormInputGroup" required>
                             </div>
                         </div>
-                        <button class="btn btn-dark" type="submit">login ➤</button>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-12 text-center margin-top-plus">
+                            <button class="btn btn-long" type="submit">Anmelden</button>
+                        </div>
                     </div>
                 </form>
         </section>
