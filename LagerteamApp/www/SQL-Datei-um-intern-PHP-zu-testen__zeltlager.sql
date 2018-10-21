@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 15. Okt 2018 um 23:13
+-- Erstellungszeit: 21. Okt 2018 um 16:12
 -- Server-Version: 10.1.36-MariaDB
 -- PHP-Version: 7.2.10
 
@@ -42,7 +42,10 @@ CREATE TABLE `admins` (
 --
 
 INSERT INTO `admins` (`admin_id`, `username`, `password`, `fehlanmeldungen`, `gesperrt`) VALUES
-(1, 'tim', '$2y$10$fXZo3saweCMDys.76uFHze/1.vStMbGCex8tyDrvsELTxNRZ9gNVS', 0, b'0');
+(1, 'Tim', '$2y$10$fXZo3saweCMDys.76uFHze/1.vStMbGCex8tyDrvsELTxNRZ9gNVS', 0, b'0'),
+(2, 'Marcel', '$2y$10$R.l7B52Xq.R0TAm.TSFa9ef93zKYu0sqaTl1AXK293y.Iy5N/74nC', 0, b'0'),
+(3, 'Nicoals', '$2y$10$J0C0sv0A/WsP1bNvcyR1R./NohZuNORMEclyPaBbeDI5Dr4AIFjEu', 0, b'0'),
+(4, 'Raphael', '$2y$10$MPaaN8/KDRl6k2zTs3q2Fe.iqUNiEue0Vu7WmPUXEcncAM62LEb3u', 0, b'0');
 
 -- --------------------------------------------------------
 
@@ -99,17 +102,17 @@ CREATE TABLE `kontaktformular` (
 
 CREATE TABLE `newsticker` (
   `newsticker_id` int(11) NOT NULL,
-  `text` varchar(60) NOT NULL,
+  `text` varchar(500) NOT NULL,
   `datum` datetime NOT NULL,
-  `kuerzel` varchar(2) NOT NULL
+  `user` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Daten für Tabelle `newsticker`
 --
 
-INSERT INTO `newsticker` (`newsticker_id`, `text`, `datum`, `kuerzel`) VALUES
-(112, '+++ Neue News fÃ¼r alle Zeltlager Teilnehmer 2018 +++', '2018-10-15 19:54:27', 'tr');
+INSERT INTO `newsticker` (`newsticker_id`, `text`, `datum`, `user`) VALUES
+(117, '+++ Test News fÃ¼r Lagerteam-App +++ Weitere News werden folgen +++', '2018-10-19 23:45:58', 'tim');
 
 --
 -- Indizes der exportierten Tabellen
@@ -147,7 +150,7 @@ ALTER TABLE `newsticker`
 -- AUTO_INCREMENT für Tabelle `admins`
 --
 ALTER TABLE `admins`
-  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT für Tabelle `anmeldungen`
@@ -165,7 +168,7 @@ ALTER TABLE `kontaktformular`
 -- AUTO_INCREMENT für Tabelle `newsticker`
 --
 ALTER TABLE `newsticker`
-  MODIFY `newsticker_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=113;
+  MODIFY `newsticker_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=118;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
