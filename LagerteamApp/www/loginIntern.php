@@ -22,7 +22,7 @@ if(!empty($_POST['username'])) {
     $password_post = $_POST["password"];
     
     //Datenbankabfrag nach Benutzer um zu prüfen ob dieser existiert und um eventuell vorhandene Daten zu laden für weitere Prüfungen
-    $sql_getUser = "SELECT password, fehlanmeldungen, gesperrt FROM admins WHERE username = '$username' LIMIT 1";
+    $sql_getUser = "SELECT password, fehlanmeldungen, username, gesperrt FROM admins WHERE username = '$username' LIMIT 1";
     $result_getUser = $conn->query($sql_getUser);
     
     /**
@@ -34,6 +34,7 @@ if(!empty($_POST['username'])) {
         $userPw = $row_getUser["password"];
         $userFehlanmeldungen = $row_getUser["fehlanmeldungen"];
         $userGesperrt = $row_getUser["gesperrt"];
+        $realUsername = $row_getUser["username"];
         
         //Prüfen ob der Benutzer aktuell gesperrt ist und in diesem Fall Seite neu laden mit Fehlermeldung
         if($userGesperrt == "1"){
@@ -51,7 +52,7 @@ if(!empty($_POST['username'])) {
                 $sql_sendClear = "UPDATE admins SET fehlanmeldungen = '0' WHERE username = '$username'";
                 $result_sendClear = $conn->query($sql_sendClear);
             }
-            $_SESSION["username"] = $username;
+            $_SESSION["username"] = $realUsername;
             header("Location: intern.php");
         }
         
