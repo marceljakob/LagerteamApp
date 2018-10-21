@@ -14,6 +14,8 @@ if(!isset($_SESSION["username"]))
     exit; 
 }
 
+$user = $_SESSION["username"];
+
 /*
 Update des Newstickers an Server
 Prüfen ob POST-Message existiert
@@ -24,10 +26,9 @@ SQL-Befehl erstellen und an Datenbank übermitteln
 */
 if(!empty($_POST['newsText'])) {
     $newsText = $_POST["newsText"];
-    $newsKuerzel = strtolower($_POST["newsKuerzel"]);
     $newsDate = date('Y-m-d H:i:s');
-    if($newsText != "" && $newsKuerzel != ""){
-        $sql_sendNews = "INSERT INTO newsticker (text, kuerzel, datum) VALUES ('$newsText', '$newsKuerzel', '$newsDate')";
+    if($newsText != ""){
+        $sql_sendNews = "INSERT INTO newsticker (text, user, datum) VALUES ('$newsText', '$user', '$newsDate')";
         $result_sendNews = $conn->query($sql_sendNews);
     }
 }
@@ -85,6 +86,7 @@ if ($result_getNews->num_rows > 0) {
                 <a class="nav-item nav-link active" href="">Intern <span class="sr-only">(current)</span></a>
             </div>
         </div>
+        <div class="userInfo">Angemeldet als: <div class="user"><?php echo $user ?></div></div>
         <a href="logoutIntern.php"><button class="btn btn-danger">logout</button></a> 
     </nav>
 
@@ -107,7 +109,7 @@ if ($result_getNews->num_rows > 0) {
                 -->
                 <form action="intern.php" method="post">
                     <div class="form-row">
-                        <div class="col-md-7">
+                        <div class="col-md-9">
                             <label class="sr-only" for="inlineFormInputGroup">NewstickerText</label>
                             <div class="input-group">
                                 <div class="input-group-prepend">
@@ -115,9 +117,6 @@ if ($result_getNews->num_rows > 0) {
                                 </div>
                                 <input type="text" class="form-control" id="newstickerUpdate" name="newsText" aria-describedby="Newsticker Update" placeholder="News hier eintragen" value="<?php echo $newstickerText; ?>" id="inlineFormInputGroup" required>
                             </div>
-                        </div>
-                        <div class="col-md-2">
-                            <input type="text" class="form-control" id="newstickerKuerzel" name="newsKuerzel" aria-describedby="Newsticker Kuerzel" placeholder="kuerzel (xx)" maxlength="2" required>
                         </div>
                         <button class="btn btn-dark" type="submit">aktualisieren ➤</button>
                     </div>
@@ -128,9 +127,18 @@ if ($result_getNews->num_rows > 0) {
 
         <!-- Zweite Section Intern onlineAnmeldungen -->
         <section class="container container-navbar-fixed hidden" id="onlineAnmeldungen">
+           <?php
+                $sql_getAnzahl = "SELECT COUNT(anmeldung_id) AS anzahl FROM anmeldungen";
+                $result_getAnzahl = $conn->query($sql_getAnzahl);
+            
+                if ($result_getAnzahl->num_rows > 0) {
+                    $row_getAnzahl = $result_getAnzahl->fetch_assoc();
+                    $anzahl = $row_getAnzahl["anzahl"];
+                }
+            ?>
             <!--Überschrift Section-->
             <h4>
-                Bisherige Online-Anmeldungen
+                Bisherige Online-Anmeldungen <?php echo "(Anzahl: " . $anzahl . ")"; ?>
             </h4>
             <!--
             Tabelle mit allen in der Datenbank hinterlegten Anmeldungen.
