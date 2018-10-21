@@ -58,3 +58,14 @@ hr{
     padding-left: 40pt;
     padding-right: 40pt;
 }
+
+.userInfo{
+    display: inline-block;
+    margin-right: 25pt;
+    color: #bbb;
+}
+
+.user{
+    display: inline-block;
+    color: #ddd;
+}
