@@ -1,7 +1,13 @@
 window.addEventListener("load", () => {
+    //Variable um Anchor / Hash aus URL zu speichern
+    //Variable um Element "errormsg" aus dem HTML Dokument zu speichern
     let anchor = window.location.hash;
     let errormsg = document.getElementById("errormsg");
     
+    /**
+    if-Anweisung um zu prüfen ob sich eine Nachricht in der URL befindet
+    Falls ja, entscheidet die switch-Anweisung welche Fehlermeldung ausgegeben wird.
+    **/
     if(anchor != ""){
         switch(anchor){
             case "#gesperrt":

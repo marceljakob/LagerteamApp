@@ -12,23 +12,40 @@ if(isset($_SESSION["username"]))
     exit; 
 }
 
+/**
+Funktion um login zu prüfen
+Prüfen auf POST-Nachricht
+Falls vorhanden Daten aus Post-Nachricht speichern
+**/
 if(!empty($_POST['username'])) {
     $username = strtolower($_POST["username"]);
     $password_post = $_POST["password"];
     
+    //Datenbankabfrag nach Benutzer um zu prüfen ob dieser existiert und um eventuell vorhandene Daten zu laden für weitere Prüfungen
     $sql_getUser = "SELECT password, fehlanmeldungen, gesperrt FROM admins WHERE username = '$username' LIMIT 1";
     $result_getUser = $conn->query($sql_getUser);
+    
+    /**
+    Falls User existiert werden die übergebene Daten in Variablen gespeichert
+    Andernfalls wird die Seite neu geladen mit der Fehlermeldung dass der User nicht existiert.
+    **/
     if ($result_getUser->num_rows > 0) {
         $row_getUser = $result_getUser->fetch_assoc();
         $userPw = $row_getUser["password"];
         $userFehlanmeldungen = $row_getUser["fehlanmeldungen"];
         $userGesperrt = $row_getUser["gesperrt"];
         
+        //Prüfen ob der Benutzer aktuell gesperrt ist und in diesem Fall Seite neu laden mit Fehlermeldung
         if($userGesperrt == "1"){
             header("Location: loginIntern.php#gesperrt");  
             exit; 
         }
         
+        /**
+        Sollte der User nicht gesperrt sein, wird das Passwort geprüft
+        stimmen die Passwörter überein wird geprüft ob Fehlanmeldungen vorhanden sind, diese werden ggfs. gelöscht bzw. auf Null gesetzt
+        Anschließend wird für den User eine Session gestartet, womit er Zugriff auf die intern.php Seite bekommt, auf welche er im Anschluss weitergeleitet wird
+        **/
         else if(password_verify($password_post, $userPw)){
             if($userFehlanmeldungen > 0){
                 $sql_sendClear = "UPDATE admins SET fehlanmeldungen = '0' WHERE username = '$username'";
@@ -38,10 +55,17 @@ if(!empty($_POST['username'])) {
             header("Location: intern.php");
         }
         
+        /**
+        Sollte das Passwort nicht korrekt sein, wird zuerst geprüft ob der User bereits 2 oder mehr Fehlanmeldungen besitzt
+        In diesem Fall wird der Account des Users auf gesperrt gesetzt und die Seite wird mit der gesperrt-Fehlermeldung neu geladen
+        Andernfalls wird die Anzahl der Fehlanmeldungen um 1 erhöht und die Seite wird mit der Passwort-Falsch-Fehlermeldung neu geladen. 
+        **/
         else{
             if($userFehlanmeldungen >= 2){
                 $sql_sendGesperrt = "UPDATE admins SET gesperrt = '1' WHERE username = '$username'";
                 $result_sendGesperrt = $conn->query($sql_sendGesperrt);
+                header("Location: loginIntern.php#gesperrt");
+                exit;
 
             }
             $sql_sendFehlanmeldung = "UPDATE admins SET fehlanmeldungen = fehlanmeldungen+1 WHERE username = '$username'";
