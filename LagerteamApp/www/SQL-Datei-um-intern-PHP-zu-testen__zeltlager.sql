@@ -18,6 +18,10 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8mb4 */;
 
+CREATE USER 'lagerteam'@'localhost' IDENTIFIED BY 'lagerteam';
+
+GRANT ALL PRIVILEGES ON * . * TO 'lagerteam'@'localhost';
+
 --
 -- Datenbank: `zeltlager`
 --
