@@ -1,4 +1,44 @@
-<!-- Dies ist der Quelltext für das Kontaktformular -->
+<!-- Dies ist der php-Code-->
+
+<!--Mit folgender Anweisung wird die Datenbank eingebunden -->
+<?php 
+include 'dbConnect.php';
+
+//if-Abfrage, um zu prüfen ob die Felder gefüllt sind
+//Da alle Felder den Zusatz requiered haben, genügt es ein Feld auf Inhalt zu prüfen. 
+if(!empty ($_POST["name"])) {
+    $name = $_POST["name"];
+    $email = $_POST["emailfeld"];
+    $telefon = $_POST["telefonnr"];
+    $nachricht = $_POST["nachricht"];
+    echo $name;
+}
+
+
+?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Dies ist der  html-Quelltext für das Kontaktformular -->
 
 <!DOCTYPE html>
 <html>
@@ -53,7 +93,7 @@
 
     <main>
         <!-- Kontaktformular -->
-        <form>
+        <form action="kontaktformular.php" method="post"> <!-- Anweisung, wohin die Inputs gesendet werden sollen. -->
            <!--container für das Grid -->
             <div class="container container-navbar-fixed">
                <!--Abschnitt für das Namensfeld-->
@@ -61,7 +101,7 @@
                     <div class="cold-md-6" id="namensfeld">
                         <div class="form-group">
                             <label for="formGroupExampleInput">*Name:</label>
-                            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Namen eingeben..." required>
+                            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Namen eingeben..." required name="name">
                         </div>
                     </div>
                 </div>
@@ -71,7 +111,7 @@
                     <div class="cold-md-6" id="emailfeld">
                         <div class="form-group">
                             <label for="exampleInputEmail1">*E-Mail Adresse:</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="E-Mail Adresse eingeben..." required>
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="E-Mail Adresse eingeben..." required name="emailfeld">
                         </div>
                     </div>
                 </div>
@@ -80,7 +120,7 @@
                     <div class="cold-md-6" id="telefonnummer">
                         <div class="form-group">
                             <label for="formGroupExampleInput">*Telefon:</label>
-                            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Telefonnummer eingeben..." required>
+                            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Telefonnummer eingeben..." required name="telefonnr">
                         </div>
                     </div>
                 </div>
@@ -89,7 +129,7 @@
                     <div class="cold-md-6" id="nachrichtenfeld">
                         <div class="form-group">
                             <label for="exampleFormControlTextarea1">*Nachrichtenfeld:</label>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Deine Nachricht an uns!" required></textarea>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Deine Nachricht an uns!" required name="nachricht"></textarea>
                         </div>
                     </div>
                 </div>
@@ -103,7 +143,7 @@
                 <!--Absenden Button-->
                 <div class="row">
                     <div class="cold-md-6" id="bestaetigen">
-                        <button type="button" class="btn btn-primary btn-menu" id="buttonAbsenden">Absenden!
+                        <button type="submit" class="btn btn-primary btn-menu" id="buttonAbsenden">Absenden!
 
                         </button>
 
