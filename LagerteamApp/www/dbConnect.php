@@ -6,9 +6,9 @@
     /* Host-Adresse der zu verbindenden Datenbank (z.B. "localhost", "127.0.0.1" oder "http://www.meineDatenbank.de")*/
     $servername = "localhost";
     /* Benutzername um sich an der Datenbank anzumelden */
-    $username = "newsticker";
+    $username = "lagerteam";
     /* Passwort zum Benutzername um sich an der Datenbank anzumelden */
-    $password = "newsticker";
+    $password = "lagerteam";
     /* Name der Datenbank die genutzt werden soll */
     $dbname = "zeltlager";
     
