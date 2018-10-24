@@ -1,0 +1,26 @@
+.row {
+    padding: 5pt;
+    margin: 2pt;
+}
+
+.form-control {
+    font-style: italic;
+    width: 200pt;
+}
+
+#pflichtfelder {
+    margin-bottom: 2pt;
+    font-size: 8pt;
+}
+
+#buttonAbsenden:hover {
+    background-color: darkgreen;
+}
+
+/* Nachfolgende Anweisung bezieht sich auf das Nachrichtenfeld */
+#exampleFormControlTextarea1{ 
+    height: 150pt;
+}
+
+
+

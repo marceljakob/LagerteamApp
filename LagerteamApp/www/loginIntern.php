@@ -173,3 +173,7 @@ if(!empty($_POST['username'])) {
 </script>
 
 </html>
+<?php
+    /* Datenbank-Verbindung nach gebrauch am Ende schließen */
+    $conn->close();
+?>
