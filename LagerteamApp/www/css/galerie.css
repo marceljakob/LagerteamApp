@@ -1,0 +1,17 @@
+.fotos {
+    display: inline-block;
+    width: 30%;
+
+    border: 1px solid darkgrey;
+    border-radius: 0.5em;
+    background: rgba(245, 245, 245);
+    padding: 0.5em;
+
+    transition: transform 0.5s, background 0.5s;
+    transform: scale(1);
+}
+.fotos img {
+    display: block;
+    width: 100%;
+    margin-bottom: 0.5em;
+}
