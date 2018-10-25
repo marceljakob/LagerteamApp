@@ -10,31 +10,20 @@ if(!empty ($_POST["name"])) {
     $name = $_POST["name"];
     $email = $_POST["emailfeld"];
     $telefon = $_POST["telefonnr"];
-    $nachricht = $_POST["nachricht"];
-    echo $name;
+    $nachricht = $_POST["nachricht"]; 
+    
+    echo $name, $email, $telefon, $nachricht;
+    
+    
+    
+    /*SQL Befehl, um die im Kontaktformular eingetragenen Daten in die Datenbank zu übertragen */
+    $sql_einfuegen ="INSERT INTO kontaktformular(name, telefon, email, nachricht) VALUES ('$name', '$telefon', '$email', '$nachricht')";
+    
+    $result_einfuegen = $conn->query($sql_einfuegen);    
 }
 
 
 ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -80,10 +69,10 @@ if(!empty ($_POST["name"])) {
                     <a class="nav-link" href="songtexte.html">Songtexte</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="#">Kontakt <span class="sr-only">(current)</span></a>
+                    <a class="nav-link active" href="kontaktformular.php">Kontakt <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Intern</a>
+                    <a class="nav-link" href="intern.php">Intern</a>
                 </li>
 
             </ul>
