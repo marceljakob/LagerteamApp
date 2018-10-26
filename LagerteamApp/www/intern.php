@@ -14,6 +14,7 @@ if(!isset($_SESSION["username"]))
     exit; 
 }
 
+/* username aus Session speichern */
 $user = $_SESSION["username"];
 
 /*
@@ -58,6 +59,7 @@ if ($result_getNews->num_rows > 0) {
 
     <!-- Bootstrap einbinden -->
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/default.css">
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
@@ -71,7 +73,7 @@ if ($result_getNews->num_rows > 0) {
 <body>
     <!-- Navigationsleiste -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <a class="navbar-brand" href="#">Logo</a>
+        <a class="navbar-brand" href="./"><img src="img/logo.png" alt=""></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -82,7 +84,7 @@ if ($result_getNews->num_rows > 0) {
                 <a class="nav-item nav-link" href="kalender.html">Kalender</a>
                 <a class="nav-item nav-link" href="galerie.html">Galerie</a>
                 <a class="nav-item nav-link" href="songtexte.html">Songtexte</a>
-                <a class="nav-item nav-link" href="kontakt.html">Kontakt</a>
+                <a class="nav-item nav-link" href="kontaktformular.php">Kontakt</a>
                 <a class="nav-item nav-link active" href="">Intern <span class="sr-only">(current)</span></a>
             </div>
         </div>
