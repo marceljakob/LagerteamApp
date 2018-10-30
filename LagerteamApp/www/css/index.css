@@ -1,15 +1,28 @@
-
 main {
-    border: 2px solid black;
+ padding-bottom: 50pt;
+    
 }
 
+
+
+
+/* Footer angepasst für den Newsticker */
 footer {
     text-align: center;
-    background-color: brown;
+    background-color: #343a40;
+    position: fixed;
+    bottom: 0;
+    height: 50pt;
+    width: 100%;
+    padding-bottom: 20pt;
+    padding-top: 10pt;
+    color: white;
+    font-size: 18pt;
 }
 
 
 .row {
+    
     padding: 5pt;
     
     margin-top: 10pt;
@@ -17,9 +30,7 @@ footer {
     margin-left: 5pt;
     margin-right: 5pt;
     
-    
-    text-align: center; 
-    
+    text-align: center;  
     
 }
 
@@ -30,11 +41,21 @@ footer {
     
     background-size: cover;
     background-repeat: no-repeat;
-    background-color: lightgray;     
+    background-color: lightgray; 
+    font-size: 20pt;
+    font-weight: 600;
+    color: black;
+    text-shadow: 1pt 1pt 1pt darkgray;
+    transition: all .1s ease-in-out;   
+
+   
 }
 
+/* color und scale hinzugefügt */
 .btn-menu:hover{
     background-color: darkgray;
+    color: black;
+    transform: scale(0.99);
 }
 
 #btn-anmeldung {
