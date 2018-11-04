@@ -46,7 +46,7 @@ footer {
     font-weight: 600;
     color: black;
     text-shadow: 1pt 1pt 1pt darkgray;
-    transition: all .1s ease-in-out;   
+    transition: all .1s ease-in-out; /*legt fest, mit welcher Verzögerung der Übergang stattfindet */  
 
    
 }
@@ -55,7 +55,7 @@ footer {
 .btn-menu:hover{
     background-color: darkgray;
     color: black;
-    transform: scale(0.99);
+    transform: scale(0.99); /*Streckung des Buttons nach innen */
 }
 
 #btn-anmeldung {
