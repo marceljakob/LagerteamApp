@@ -14,7 +14,6 @@ if(!isset($_SESSION["username"]))
     exit; 
 }
 
-/* username aus Session speichern */
 $user = $_SESSION["username"];
 
 /*
@@ -128,7 +127,7 @@ if ($result_getNews->num_rows > 0) {
         </section>
 
         <!-- Zweite Section Intern onlineAnmeldungen -->
-        <section class="container container-navbar-fixed hidden" id="onlineAnmeldungen">
+        <section class="container" id="onlineAnmeldungen">
            <?php
                 $sql_getAnzahl = "SELECT COUNT(anmeldung_id) AS anzahl FROM anmeldungen";
                 $result_getAnzahl = $conn->query($sql_getAnzahl);
