@@ -102,7 +102,29 @@
 
     <!-- Fußbereich der App mit dem Newsticker -->
     <footer>
-    Fußzeile
+      <marquee>
+        <?php
+            /* Datei dbConnect.php einbinden um Verbindung mit Datenbank herzustellen */
+            include 'dbConnect.php';
+
+            /*
+            Den aktuellen Text des Newstickers aus der Datenbank laden und in Variable speichern
+            SQL-Befehl erstellen und an Datenbank übermitteln
+            Ergebnis auf Inhalt prüfen
+            Ergebnis in Variable speichern
+            */
+            $sql_getNews = "SELECT text FROM newsticker ORDER BY newsticker_id DESC";
+            $result_getNews = $conn->query($sql_getNews);
+            $newstickerText = "";
+            if ($result_getNews->num_rows > 0) {
+                $row_getNews = $result_getNews->fetch_assoc();
+                echo $row_getNews["text"];
+            }
+
+            /* Datenbank-Verbindung nach gebrauch am Ende schließen */
+            $conn->close();
+        ?>
+    </marquee>
 
     </footer>
 
