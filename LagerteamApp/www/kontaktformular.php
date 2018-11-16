@@ -1,21 +1,30 @@
 <!-- Dies ist der php-Code-->
 
 <!--Mit folgender Anweisung wird die Datenbank eingebunden -->
-<?php 
+<?php
 include 'dbConnect.php';
 
 //if-Abfrage, um zu prüfen ob die Felder gefüllt sind
-//Da alle Felder den Zusatz requiered haben, genügt es ein Feld auf Inhalt zu prüfen. 
+//Da alle Felder den Zusatz requiered haben, genügt es ein Feld auf Inhalt zu prüfen.
 if(!empty ($_POST["name"])) {
     $name = $_POST["name"];
     $email = $_POST["emailfeld"];
     $telefon = $_POST["telefonnr"];
+<<<<<<< HEAD
     $nachricht = $_POST["nachricht"]; 
     
+=======
+    $nachricht = $_POST["nachricht"];
+
+    echo $name, $email, $telefon, $nachricht;
+
+
+
+>>>>>>> 50da45db6d83f4bf3b4f4919f25649c9c4ca4f84
     /*SQL Befehl, um die im Kontaktformular eingetragenen Daten in die Datenbank zu übertragen */
     $sql_einfuegen ="INSERT INTO kontaktformular(name, telefon, email, nachricht) VALUES ('$name', '$telefon', '$email', '$nachricht')";
-    
-    $result_einfuegen = $conn->query($sql_einfuegen);    
+
+    $result_einfuegen = $conn->query($sql_einfuegen);
 }
 ?>
 
@@ -43,33 +52,21 @@ if(!empty ($_POST["name"])) {
 
 <body>
     <!-- Navigationsleiste -->
-    <nav id="nav-main" class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <a class="navbar-brand" href="index.html">Menü</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="./"><img src="img/logo.png"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item ">
-                    <a class="nav-link" href="#">Online-Anmeldung </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Kalender</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="galerie.html">Galerie</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="songtexte.html">Songtexte</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" href="kontaktformular.php">Kontakt <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="intern.php">Intern</a>
-                </li>
-
-            </ul>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link" href="./">Menü</a>
+                <a class="nav-item nav-link" href="anmeldung.html">Online-Anmeldung</a>
+                <a class="nav-item nav-link" href="kalender.html">Kalender</a>
+                <a class="nav-item nav-link" href="galerie.html">Galerie</a>
+                <a class="nav-item nav-link" href="songtexte.html">Songtexte</a>
+                <a class="nav-item nav-link active" href="kontaktformular.php">Kontakt<span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="intern.php">Intern</a>
+            </div>
         </div>
     </nav>
 

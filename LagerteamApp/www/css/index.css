@@ -1,6 +1,6 @@
 main {
  padding-bottom: 50pt;
-    
+
 }
 
 
@@ -22,33 +22,33 @@ footer {
 
 
 .row {
-    
+
     padding: 5pt;
-    
+
     margin-top: 10pt;
     margin-bottom: 10pt;
     margin-left: 5pt;
     margin-right: 5pt;
-    
-    text-align: center;  
-    
+
+    text-align: center;
+
 }
 
 .btn-menu {
     width: 150pt;
     height: 150pt;
     padding: 4pt;
-    
+
     background-size: cover;
     background-repeat: no-repeat;
-    background-color: lightgray; 
+    background-color: lightgray;
     font-size: 20pt;
     font-weight: 600;
     color: black;
     text-shadow: 1pt 1pt 1pt darkgray;
-    transition: all .1s ease-in-out; /*legt fest, mit welcher Verzögerung der Übergang stattfindet */  
+    transition: all .1s ease-in-out; /*legt fest, mit welcher Verzögerung der Übergang stattfindet */
 
-   
+
 }
 
 /* color und scale hinzugefügt */
@@ -67,7 +67,7 @@ footer {
 }
 
 #btn-galerie {
-    background-image: url(../img/gallerie.png);  
+    background-image: url(../img/gallerie.png);
 }
 
 #btn-songtexte {

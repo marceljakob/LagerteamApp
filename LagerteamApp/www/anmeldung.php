@@ -6,7 +6,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Start</title>
+    <title>Online-Anmeldung</title>
 
     <!-- Bootstrap einbinden -->
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
@@ -16,42 +16,28 @@
     <script src="bootstrap/js/bootstrap.min.js"></script>
 
     <!-- Eigene Stylesheets -->
-    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/kontaktformular.css">
     <link rel="stylesheet" href="css/default.css"/>
 
 </head>
 
 <body>
     <!-- Navigationsleiste -->
-    <nav id="nav-main" class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="index.html">Menü</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="./"><img src="img/logo.png"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item ">
-                    <a class="nav-link" href="#">Online-Anmeldung </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Kalender</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="galerie.html">Galerie</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="songtexte.html">Songtexte</a>
-
-
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="kontaktformular.php">Kontakt</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Intern</a>
-                </li>
-
-            </ul>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link" href="./">Menü</a>
+                <a class="nav-item nav-link active" href="anmeldung.html">Online-Anmeldung<span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="kalender.html">Kalender</a>
+                <a class="nav-item nav-link" href="galerie.html">Galerie</a>
+                <a class="nav-item nav-link" href="songtexte.html">Songtexte</a>
+                <a class="nav-item nav-link" href="kontaktformular.php">Kontakt</a>
+                <a class="nav-item nav-link" href="intern.php">Intern</a>
+            </div>
         </div>
     </nav>
 
@@ -59,50 +45,7 @@
     <!-- Im nachfolgenden main-Bereich wird der Container für das Anmeldeformular definiert -->
     <main>
         <!-- Container für das Anmeldeformular -->
-        <div class="container">
 
-            <div class="row">
-                <div class="col-md-6" id="onlineAnmeldung">
-                    <button type="button" class="btn btn-dark btn-menu" id="btn-anmeldung"> Online-Anmeldung</button>
-
-                </div>
-
-                <div class="col-md-6" id="kalender">
-                    <button type="button" class="btn btn-dark btn-menu" id="btn-kalender"> Kalender</button>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-6" id="gallerie">
-
-                     <button type="button" class="btn btn-dark btn-menu" id="btn-galerie"
-                     onclick="javascript:location.href='galerie.html'"> Galerie</button>
-
-
-                </div>
-
-                <div class="col-md-6" id="songtexte">
-
-                     <button type="button" class="btn btn-dark btn-menu" id="btn-songtexte"
-                     onclick="javascript:location.href='songtexte.html'"> Songtexte</button>
-
-                </div>
-
-            </div>
-
-            <div class="row">
-                <div class="col-md-6" id="kontakte">
-                     <button type="button" class="btn btn-dark btn-menu" id="btn-kontakte" onclick="javascript:location.href='kontaktformular.php'"> Kontakte</button>
-
-                </div>
-
-                <div class="col-md-6" id="intern">
-                     <button type="button" class="btn btn-dark btn-menu" id="btn-intern"> Intern</button>
-                </div>
-
-            </div>
-
-        </div>
 
     </main>
 
