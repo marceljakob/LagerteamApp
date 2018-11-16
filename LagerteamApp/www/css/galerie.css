@@ -1,17 +1,22 @@
 .fotos {
+    width: 260pt;
+    height: 150pt;
     display: inline-block;
     width: 30%;
 
     border: 1px solid darkgrey;
     border-radius: 0.5em;
     background: rgba(245, 245, 245);
+    background-size: cover;
     padding: 0.5em;
+    margin-right: 12pt;
+    margin-bottom: 15pt;
+    color: white;
+    font-size: 35pt;
 
     transition: transform 0.5s, background 0.5s;
     transform: scale(1);
 }
-.fotos img {
-    display: block;
-    width: 100%;
-    margin-bottom: 0.5em;
+#im1 {
+  background-image: url(../img/Galerie_Placeholder/logo.jpg);
 }
