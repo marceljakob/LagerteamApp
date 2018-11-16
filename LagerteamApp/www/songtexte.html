@@ -28,7 +28,7 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
                 <a class="nav-item nav-link" href="./">Menü</a>
-                <a class="nav-item nav-link" href="#">Online-Anmeldung</a>
+                <a class="nav-item nav-link" href="anmeldung.html">Online-Anmeldung</a>
                 <a class="nav-item nav-link" href="kalender.html">Kalender</a>
                 <a class="nav-item nav-link" href="galerie.html">Galerie</a>
                 <a class="nav-item nav-link active" href="">Songtexte <span class="sr-only">(current)</span></a>
@@ -102,20 +102,6 @@
                 </div>
             </a>
             <!--Ende eines Song Elements-->
-
-            <!--Anfang eines Song Elements-->
-            <a href="#bws">
-                <div class="song">
-                    <div class="icon"><img src="" alt="💿"></div>
-                    <div class="description">
-                        <span class="title">
-                            Beliebiger weiterer Song
-                        </span>
-                        <br>Interpret des Songs
-                    </div>
-                </div>
-            </a>
-            <!--Ende eines Song Elements-->
         </section>
 
         <!--Beginn Songtext Section-->
@@ -161,10 +147,10 @@ Des Weiteren lässt sich die Geschwindigkeit des scrollen einstellen.-->
     /**
     Funktion um das automatische scrollen der Seite zu starten.
     Das onclick Attribut des ScrollButtons wird dahingehend verändert, das bei erneutem klicken die stopScroll() Funktion aufgerufen wird.
-    Die Position der Buttons wird angepasst und auf fixed gesetzt, um zu verhindern das sie bei zu weitem Scrollen aus der Bildfläche verschwinden. 
+    Die Position der Buttons wird angepasst und auf fixed gesetzt, um zu verhindern das sie bei zu weitem Scrollen aus der Bildfläche verschwinden.
     Der Inhalt des scrollButtons wird verändert um dem Anwender zu signalisieren, dass die Seite gescrollt wird und er durch erneutes klicken das scrollen anhalten kann.
     Die Funktion .toFixed(1) ermöglicht die Darstellung mit immer genau einer Dezimalstelle nach dem Komma.
-    Die Seite wird nach einem Vordefinierten Delay von 100ms um jeweils einen Pixel hinuntergescrollt und auf der Console wird signalisiert, dass die Seite gescrollt wird. 
+    Die Seite wird nach einem Vordefinierten Delay von 100ms um jeweils einen Pixel hinuntergescrollt und auf der Console wird signalisiert, dass die Seite gescrollt wird.
     Das scrollen von nur einem Pixel je 100ms ermöglicht eine sehr flüssige Bewegung.
     **/
     function pageScroll() {
@@ -181,7 +167,7 @@ Des Weiteren lässt sich die Geschwindigkeit des scrollen einstellen.-->
     /**
     Funktion um das automatische scrollen der Seite zu stopen.
     Das onclick Attribut des ScrollButtons wird dahingehend verändert, das bei erneutem klicken die pageScroll() Funktion aufgerufen wird.
-    Die Position der Buttons wird angepasst und das fixed Attribut entfernt, um die Button an die ursprünglich definierte Position zu bewegen. 
+    Die Position der Buttons wird angepasst und das fixed Attribut entfernt, um die Button an die ursprünglich definierte Position zu bewegen.
     Der Inhalt des scrollButtons wird verändert um dem Anwender zu signalisieren, dass die Seite nicht gescrollt wird und er durch erneutes klicken das scrollen starten kann.
     Die pageScroll Funktion wird beendet und auf der Console wird ausgegeben, dass die Seite nicht gescrollt wird.
     **/
@@ -236,7 +222,7 @@ Des Weiteren lässt sich die Geschwindigkeit des scrollen einstellen.-->
     let zoomInButton = document.getElementById("zoomInButton");
     let zoomOutButton = document.getElementById("zoomOutButton");
 
-    /** 
+    /**
     zoomIn Funktion um den Songtext zu vergrößern.
     Der Songtext Section wird die Klasse container entfernt.
     Der zoomInButton wird deaktiviert.
@@ -249,7 +235,7 @@ Des Weiteren lässt sich die Geschwindigkeit des scrollen einstellen.-->
         zoomOutButton.classList.remove("disabled");
     }
 
-    /** 
+    /**
     zoomOut Funktion um den Songtext zu verkleinern.
     Der Songtext Section wird die Klasse container hinzugefügt.
     Der zoomInButton wird aktiviert.

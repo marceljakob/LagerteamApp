@@ -46,10 +46,6 @@ window.addEventListener("load", () => {
                 songtitle.innerHTML = title_knockinOnHeavensDoor;
                 songtext.innerHTML = text_knockinOnHeavensDoor;
                 break;
-            case "#bws":
-                songtitle.innerHTML = "Interpret des Songs - Beliebiger weiterer Song";
-                songtext.innerHTML = "Songtext des Songs";
-                break;
         }
         /** Liste der Songtexte ausblenden über hidden + den gewünschten Songtext anzeigen (entfernen von hidden) **/
         songtexte.classList.add("hidden");

@@ -1,0 +1,162 @@
+<!-- Bei dieser Datei handelt es sich um die Startseite der App. -->
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Online-Anmeldung</title>
+
+    <!-- Bootstrap einbinden -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Eigene Stylesheets -->
+    <link rel="stylesheet" href="css/anmeldung.css">
+    <link rel="stylesheet" href="css/default.css"/>
+
+</head>
+
+<body>
+    <!-- Navigationsleiste -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="./"><img src="img/logo.png"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link" href="./">Menü</a>
+                <a class="nav-item nav-link active" href="anmeldung.html">Online-Anmeldung<span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="kalender.html">Kalender</a>
+                <a class="nav-item nav-link" href="galerie.html">Galerie</a>
+                <a class="nav-item nav-link" href="songtexte.html">Songtexte</a>
+                <a class="nav-item nav-link" href="kontaktformular.php">Kontakt</a>
+                <a class="nav-item nav-link" href="intern.php">Intern</a>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Im nachfolgenden main-Bereich wird der Container für das Anmeldeformular definiert -->
+    <main>
+      <!-- Anmelde Formular -->
+      <form name="anmeldung" method="POST" action="zeltlager-anmeldung.php" onsubmit="return check_blank()";> <!-- Anweisung, wohin die Inputs gesendet werden sollen. -->
+         <!--container für das Grid -->
+          <div class="container container-navbar-fixed">
+             <!--Abschnitt für das Nachname Feld-->
+              <div class="row">
+                  <div class="cold-md-6" id="nachname">
+                      <div class="form-group">
+                          <label for="formGroupExampleInput">*Nachname:</label>
+                          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Nachname eingeben..." name="nachname" id="nachname">
+                      </div>
+                  </div>
+              </div>
+                <!--Abschnitt für das Vorname Feld-->
+              <div class="row">
+                  <div class="cold-md-6" id="nachname">
+                      <div class="form-group">
+                          <label for="formGroupExampleInput">*Vorname:</label>
+                          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Vorname eingeben..." name="nachname" id="nachname">
+                      </div>
+                  </div>
+              </div>
+              <!--Abschnitt für das Geburtsdatum Feld-->
+            <div class="row">
+                <div class="cold-md-6" id="nachname">
+                    <div class="form-group">
+                        <label for="formGroupExampleInput">*Geburtsdatum:</label>
+                        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Geburtsdatum eingeben..." name="geb" id="geb">
+                    </div>
+                </div>
+            </div>
+              <!--Abschnitt für das E-Mail Feld-->
+              <div class="row">
+                  <div class="cold-md-6" id="emailfeld">
+                      <div class="form-group">
+                          <label for="exampleInputEmail1">*E-Mail Adresse:</label>
+                          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="E-Mail Adresse eingeben..." name="mail" id="mail">
+                      </div>
+                  </div>
+              </div>
+              <!--Abschnitt für die Telefonnummer-->
+              <div class="row">
+                  <div class="cold-md-6" id="telefonnummer">
+                      <div class="form-group">
+                          <label for="formGroupExampleInput">*Telefon:</label>
+                          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Telefonnummer eingeben..." name="tel" id="tel">
+                      </div>
+                  </div>
+              </div>
+              <!--Abschnitt für das Strassen und Hausnummer Feld-->
+              <div class="row">
+                  <div class="cold-md-6" id="strasse">
+                      <div class="form-group">
+                          <label for="formGroupExampleInput">*Straße + Hausnummer:</label>
+                          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Straße & Hausnummer..." name="strasse" id="strasse">
+                      </div>
+                  </div>
+              </div>
+              <!--Abschnitt für das Strassen und Hausnummer Feld-->
+              <div class="row">
+                  <div class="cold-md-6" id="plz">
+                      <div class="form-group">
+                          <label for="formGroupExampleInput">*Postleihzahl:</label>
+                          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="PLZ eingeben..." name="plz" id="plz">
+                      </div>
+                  </div>
+              </div>
+              <!--Abschnitt für das Ortsfeld-->
+              <div class="row">
+                  <div class="cold-md-6" id="ort">
+                      <div class="form-group">
+                          <label for="formGroupExampleInput">*Ort:</label>
+                          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Ort eingeben..." name="ort" id="ort">
+                      </div>
+                  </div>
+              </div>
+
+
+              <!--Abschnitt für das Nachrichtenfeld-->
+              <div class="row">
+                  <div class="cold-md-6" id="mitteilung">
+                      <div class="form-group">
+                          <label for="exampleFormControlTextarea1">*Mitteilung:</label>
+                          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Deine Nachricht an uns!" name="mitteilung" id="mitteilung"></textarea>
+                      </div>
+                  </div>
+              </div>
+              <!--Abschnitt für den Hinweis Pflichtfelder-->
+              <div class="row">
+                  <div class="cold-md-6" id="pflichtfelder">
+                      mit * gekennzeichnete Felder sind Pflichtfelder!
+                  </div>
+              </div>
+
+              <!--Absenden Button-->
+              <div class="row">
+                  <div class="cold-md-6" id="bestaetigen">
+                      <button type="submit" class="btn btn-primary btn-menu" id="buttonAbsenden">Absenden!
+
+                      </button>
+
+                  </div>
+              </div>
+
+
+          </div>
+      </form>
+
+
+    </main>
+
+
+
+</body>
+
+</html>
