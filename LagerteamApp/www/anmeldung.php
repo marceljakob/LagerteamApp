@@ -45,9 +45,30 @@
     <!-- Im nachfolgenden main-Bereich wird der Container für das Anmeldeformular definiert -->
     <main>
         <!-- Container für das Anmeldeformular -->
+        <?php
+        include 'dbConnect.php';
 
 
-    </main>
+        $nachname = $_POST['nachname'];
+        $vorname = $_POST['vorname'];
+        $strasse = $_POST['strasse'];
+        $plz = $_POST['plz'];
+        $ort = $_POST['ort'];
+        $telefon = $_POST['tel'];
+        $geb = $_POST['geb'];
+        $email = $_POST['mail'];
+        $zuschuss = $_POST['zuschuss'];
+        $kjgmitglied = $_POST['kjg'];
+        $mitteilung = $_POST['mitteilung'];
+        $timestamp = time();
+        $anmelde_dat = date("d.m.Y - H:i", $timestamp);
+
+        //Anmeldung in die DATENBANK
+        $sql_einfuegen ="INSERT INTO anmeldungen(n_name, v_name, strasse_nr, plz, ort, geb_dat, telefon, email, zuschuss, mitglied, mitteilung) VALUES
+        ('$nachname', '$vorname', '$strasse', '$plz', '$ort', '$telefon', '$geb'. '$email', '$zuschuss', '$kjgmitglied', '$mitteilung')";
+
+        $result_einfuegen = $conn->query($sql_einfuegen);
+        ?>
 
 
 
