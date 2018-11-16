@@ -8,10 +8,10 @@ include 'dbConnect.php';
 session_start();
 
 /* Wenn keine Session vorhanden, Zugriff auf die Seite verweigern und auf die Login Seite umleiten. */
-if(!isset($_SESSION["username"])) 
+if(!isset($_SESSION["username"]))
 {
     header("Location: loginIntern.php");
-    exit; 
+    exit;
 }
 
 $user = $_SESSION["username"];
@@ -79,7 +79,7 @@ if ($result_getNews->num_rows > 0) {
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
                 <a class="nav-item nav-link" href="./">Menü</a>
-                <a class="nav-item nav-link" href="#">Online-Anmeldung</a>
+                <a class="nav-item nav-link" href="anmeldung.html">Online-Anmeldung</a>
                 <a class="nav-item nav-link" href="kalender.html">Kalender</a>
                 <a class="nav-item nav-link" href="galerie.html">Galerie</a>
                 <a class="nav-item nav-link" href="songtexte.html">Songtexte</a>
@@ -88,7 +88,7 @@ if ($result_getNews->num_rows > 0) {
             </div>
         </div>
         <div class="userInfo">Angemeldet als: <div class="user"><?php echo $user ?></div></div>
-        <a href="logoutIntern.php"><button class="btn btn-danger">logout</button></a> 
+        <a href="logoutIntern.php"><button class="btn btn-danger">logout</button></a>
     </nav>
 
     <!-- Seiteninhalt -->
@@ -102,7 +102,7 @@ if ($result_getNews->num_rows > 0) {
             <!--Überschrift Section-->
             <h4>
                 Update für den Newsticker schreiben:
-                <!-- 
+                <!--
                 Formular für Update des Newstickers
                 Beeinhaltet Feld für Text des Newstickers, Feld für Namenskürzel und submit-Button
                 Als value des Textfeldes für den neuen Newsticker ist der aktuelle Text des Newstickers hinterlget.
@@ -131,7 +131,7 @@ if ($result_getNews->num_rows > 0) {
            <?php
                 $sql_getAnzahl = "SELECT COUNT(anmeldung_id) AS anzahl FROM anmeldungen";
                 $result_getAnzahl = $conn->query($sql_getAnzahl);
-            
+
                 if ($result_getAnzahl->num_rows > 0) {
                     $row_getAnzahl = $result_getAnzahl->fetch_assoc();
                     $anzahl = $row_getAnzahl["anzahl"];
@@ -170,7 +170,7 @@ if ($result_getNews->num_rows > 0) {
                         //Datenbankabfrage um alle relevanten Daten bzgl. der Online-Anmeldungen zu erhalten.
                         $sql = "SELECT anmelde_dat, n_name, v_name, strasse_nr, plz, ort, geb_dat, telefon, email, zuschuss, mitglied, freitext FROM anmeldungen ORDER BY n_name";
                         $result = $conn->query($sql);
-                        
+
                         /*
                         Prüfung ob Result-Ergebnis leer ist, oder Datenenthält
                         Variablen prüfen und durch leichter Verständlichen String ersetzen.
@@ -185,14 +185,14 @@ if ($result_getNews->num_rows > 0) {
                                 else{
                                     $zuschuss = "✗";
                                 }
-                                
+
                                 if($row["mitglied"] == "1"){
                                     $mitglied = "🗸";
                                 }
                                 else{
                                     $mitglied = "✗";
                                 }
-                                
+
                                 echo "<tr>";
                                 echo "<td>" . date_format(date_create($row["anmelde_dat"]), "d.m.Y") ."</td>";
                                 echo "<td>" . $row["v_name"] . " " . $row["n_name"] . "</td>";
