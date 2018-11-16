@@ -1,6 +1,7 @@
 ﻿
 
-CREATE USER 'lagerteam' IDENTIFIED BY 'lagerteam';
+CREATE USER 'lagerteam'@'localhost' IDENTIFIED BY 'lagerteam';
+
 GRANT ALL PRIVILEGES ON * . * TO 'lagerteam'@'localhost';
 
 --
