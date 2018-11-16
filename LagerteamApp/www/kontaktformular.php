@@ -3,6 +3,7 @@
 <!--Mit folgender Anweisung wird die Datenbank eingebunden -->
 <?php
 include 'dbConnect.php';
+include 'sendMail.php';
 
 //if-Abfrage, um zu prüfen ob die Felder gefüllt sind
 //Da alle Felder den Zusatz requiered haben, genügt es ein Feld auf Inhalt zu prüfen.
@@ -10,22 +11,45 @@ if(!empty ($_POST["name"])) {
     $name = $_POST["name"];
     $email = $_POST["emailfeld"];
     $telefon = $_POST["telefonnr"];
-<<<<<<< HEAD
     $nachricht = $_POST["nachricht"]; 
-    
-=======
-    $nachricht = $_POST["nachricht"];
+
 
     echo $name, $email, $telefon, $nachricht;
 
 
-
->>>>>>> 50da45db6d83f4bf3b4f4919f25649c9c4ca4f84
     /*SQL Befehl, um die im Kontaktformular eingetragenen Daten in die Datenbank zu übertragen */
     $sql_einfuegen ="INSERT INTO kontaktformular(name, telefon, email, nachricht) VALUES ('$name', '$telefon', '$email', '$nachricht')";
 
     $result_einfuegen = $conn->query($sql_einfuegen);
+    
+    //Die folgenden Codezeilen dienen zur Übermittlung der Textfelder aus dem Kontaktformular via Mail
+
+//Send From-To
+$mail->SetFrom("lagerteamapp2018@gmail.com", "Lagerteam");
+$mail->AddAddress("lagerteamapp2018@gmail.com"); //Empfänger Adresse, Weitere Adressen über $mail->AddAddress hinzufügen oder als CC/BCC
+// $mail->addCC('cc@example.com'); //Optional
+// $mail->addBCC('bcc@example.com'); //Optional
+
+
+//Content / Nachricht
+$mail->Subject = "Anfrage von ".$name; //Betreff
+$mail->Body = "Telefon: ".$telefon."<br>Mail: ".$email."<br>Nachricht: ".$nachricht; //Text/Nachricht
+
+//Attachments
+// $mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
+// $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
+ 
+if(!$mail->Send()) {
+   ?>
+   <script>alert("Nachricht nicht gesendet!");</script> 
+<?php
+ } else {
+     ?>
+   <script>alert("Nachricht wurde erfolgreich gesendet!");</script>
+   <?php
+ }
 }
+
 ?>
 
 
