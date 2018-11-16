@@ -30,7 +30,7 @@ CREATE TABLE `admins` (
 INSERT INTO `admins` (`admin_id`, `username`, `password`, `fehlanmeldungen`, `gesperrt`) VALUES
 (1, 'Tim', '$2y$10$fXZo3saweCMDys.76uFHze/1.vStMbGCex8tyDrvsELTxNRZ9gNVS', 0, b'0'),
 (2, 'Marcel', '$2y$10$R.l7B52Xq.R0TAm.TSFa9ef93zKYu0sqaTl1AXK293y.Iy5N/74nC', 0, b'0'),
-(3, 'Nicoals', '$2y$10$J0C0sv0A/WsP1bNvcyR1R./NohZuNORMEclyPaBbeDI5Dr4AIFjEu', 0, b'0'),
+(3, 'Nicolas', '$2y$10$J0C0sv0A/WsP1bNvcyR1R./NohZuNORMEclyPaBbeDI5Dr4AIFjEu', 0, b'0'),
 (4, 'Raphael', '$2y$10$MPaaN8/KDRl6k2zTs3q2Fe.iqUNiEue0Vu7WmPUXEcncAM62LEb3u', 0, b'0');
 
 -- --------------------------------------------------------
