@@ -10,19 +10,22 @@ if(!empty ($_POST["name"])) {
     $name = $_POST["name"];
     $email = $_POST["emailfeld"];
     $telefon = $_POST["telefonnr"];
+<<<<<<< HEAD
+    $nachricht = $_POST["nachricht"]; 
+    
+=======
     $nachricht = $_POST["nachricht"];
 
     echo $name, $email, $telefon, $nachricht;
 
 
 
+>>>>>>> 50da45db6d83f4bf3b4f4919f25649c9c4ca4f84
     /*SQL Befehl, um die im Kontaktformular eingetragenen Daten in die Datenbank zu übertragen */
     $sql_einfuegen ="INSERT INTO kontaktformular(name, telefon, email, nachricht) VALUES ('$name', '$telefon', '$email', '$nachricht')";
 
     $result_einfuegen = $conn->query($sql_einfuegen);
 }
-
-
 ?>
 
 
@@ -70,15 +73,21 @@ if(!empty ($_POST["name"])) {
 
     <main>
         <!-- Kontaktformular -->
-        <form action="kontaktformular.php" method="post"> <!-- Anweisung, wohin die Inputs gesendet werden sollen. -->
-           <!--container für das Grid -->
+        <form action="kontaktformular.php" method="post">
+            <!-- Anweisung, wohin die Inputs gesendet werden sollen. -->
+            <!--container für das Grid -->
             <div class="container container-navbar-fixed">
-               <!--Abschnitt für das Namensfeld-->
+                <!--Abschnitt für das Namensfeld-->
                 <div class="row">
                     <div class="cold-md-6" id="namensfeld">
                         <div class="form-group">
-                            <label for="formGroupExampleInput">*Name:</label>
-                            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Namen eingeben..." required name="name">
+                            <label for="formGroupExampleInput">Name: *</label>
+                            <div class="input-group form-margin">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text" id="newsStatus">👤&#xFE0E;</div>
+                                </div>
+                                <input type="text" class="form-control" name="name" placeholder="Namen eingeben..." aria-describedby="Name eintragen" id="inlineFormInputGroup" required>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -87,8 +96,13 @@ if(!empty ($_POST["name"])) {
                 <div class="row">
                     <div class="cold-md-6" id="emailfeld">
                         <div class="form-group">
-                            <label for="exampleInputEmail1">*E-Mail Adresse:</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="E-Mail Adresse eingeben..." required name="emailfeld">
+                            <label for="exampleInputEmail1">E-Mail Adresse: *</label>
+                            <div class="input-group form-margin">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text" id="newsStatus">📧&#xFE0E;</div>
+                                </div>
+                                <input type="email" class="form-control" name="emailfeld" placeholder="E-Mail Adresse eingeben..." aria-describedby="E-Mail eintragen" id="inlineFormInputGroup" required>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -96,8 +110,13 @@ if(!empty ($_POST["name"])) {
                 <div class="row">
                     <div class="cold-md-6" id="telefonnummer">
                         <div class="form-group">
-                            <label for="formGroupExampleInput">*Telefon:</label>
-                            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Telefonnummer eingeben..." required name="telefonnr">
+                            <label for="formGroupExampleInput">Telefon: *</label>
+                            <div class="input-group form-margin">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text" id="newsStatus">📞&#xFE0E;</div>
+                                </div>
+                                <input type="text" class="form-control" name="telefonnr" placeholder="Telefonnummer eingeben..." aria-describedby="Telefon-Nummer eintragen" id="inlineFormInputGroup" required>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -105,8 +124,13 @@ if(!empty ($_POST["name"])) {
                 <div class="row">
                     <div class="cold-md-6" id="nachrichtenfeld">
                         <div class="form-group">
-                            <label for="exampleFormControlTextarea1">*Nachrichtenfeld:</label>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Deine Nachricht an uns!" required name="nachricht"></textarea>
+                            <label for="exampleFormControlTextarea1">Nachrichtenfeld: *</label>
+                            <div class="input-group form-margin">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text" id="newsStatus">💬&#xFE0E;</div>
+                                </div>
+                                <textarea class="form-control" id="inlineFormInputGroup" rows="3" placeholder="Deine Nachricht an uns..." required name="nachricht"></textarea>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -120,8 +144,7 @@ if(!empty ($_POST["name"])) {
                 <!--Absenden Button-->
                 <div class="row">
                     <div class="cold-md-6" id="bestaetigen">
-                        <button type="submit" class="btn btn-primary btn-menu" id="buttonAbsenden">Absenden!
-
+                        <button type="submit" class="btn btn-success " id="buttonAbsenden">Absenden!
                         </button>
 
                     </div>
@@ -130,7 +153,9 @@ if(!empty ($_POST["name"])) {
 
             </div>
         </form>
+
     </main>
+
 </body>
 
 
