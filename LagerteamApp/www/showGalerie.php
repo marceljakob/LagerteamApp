@@ -74,6 +74,7 @@ $folder=$_GET["show"];
         Zuständig für den margin-top Abstand von der fixed-Navbar.
         -->
         <section class="container container-navbar-fixed">
+          <a href="galerie.html"><button type="button" class="backbutton btn btn-dark">◄ &nbsp; Zurück zur Auswahl</button></a>
             <h1>Galerie <?php echo $folder; ?></h1>
             <div class="demo">
               <ul id="lightSlider">
