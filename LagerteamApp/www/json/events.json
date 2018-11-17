@@ -1,3 +1,9 @@
+//In dieser JSON Datei befinden sich die Termine aus dem Kalender.
+//Sie müssen vorerst noch manuell hinzugefügt werden. Später soll
+//das durch eine Verknüpfung mit der Internseite automatisch hier
+//reingeschrieben werden. Die Syntax und das Auslesen der Datei
+//war vordefiniert.
+
 [
   {
     "title": "All Day Event",
@@ -64,6 +70,11 @@
   {
     "title": "Test",
     "start": "2018-10-29T09:00"
+  },
+  {
+    "title": "Diaabend",
+    "start": "2018-11-03T16:00",
+    "end": "2018-11-03T23:00"
   }
 
 
