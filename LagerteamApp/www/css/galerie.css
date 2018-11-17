@@ -1,22 +1,51 @@
 .fotos {
     width: 260pt;
     height: 150pt;
+    padding: 4pt;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: lightgray;
+    color: white;
+    font-size: 30pt;
+    margin-right: 12pt;
+    margin-bottom: 15pt;
+    transition: transform .2s;
+    background-position: center;
+    width: 260pt;
+    height: 150pt;
     display: inline-block;
-    width: 30%;
 
     border: 1px solid darkgrey;
     border-radius: 0.5em;
-    background: rgba(245, 245, 245);
+    /*background: rgba(245, 245, 245);
     background-size: cover;
-    padding: 0.5em;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 4pt;
     margin-right: 12pt;
     margin-bottom: 15pt;
     color: white;
     font-size: 35pt;
 
-    transition: transform 0.5s, background 0.5s;
-    transform: scale(1);
+    transition: transform 0.2s;
+    transform: scale(1.03);*/
+
 }
 #im1 {
-  background-image: url(../img/Galerie_Placeholder/logo.jpg);
+  background-image: url(../img/Galerie_Placeholder/logo1.jpg);
+}
+#im2 {
+  background-image: url(../img/Galerie_Placeholder/logo2.jpg);
+}
+#im3 {
+  background-image: url(../img/Galerie_Placeholder/logo3.jpg);
+}
+#im4 {
+  background-image: url(../img/Galerie_Placeholder/logo4.jpg);
+}
+#im5 {
+  background-image: url(../img/Galerie_Placeholder/logo5.jpg);
+}
+#im6 {
+  background-image: url(../img/Galerie_Placeholder/logo6.jpg);
 }
