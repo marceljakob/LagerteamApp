@@ -1,3 +1,4 @@
+/* In diesem Teil werden die Buttons auf der galerie.html Seite angepasst*/
 .fotos {
     width: 260pt;
     height: 150pt;
@@ -17,9 +18,11 @@
 
     border: 1px solid darkgrey;
     border-radius: 0.5em;
-    
+
 
 }
+/* Im Folgenden werden die Buttons auf der Galerie.html Seite ausgewählt
+und die Pfade für Hintergrundbilder festgelegt*/
 #im1 {
   background-image: url(../img/Galerie_Placeholder/logo1.jpg);
 }
