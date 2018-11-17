@@ -11,6 +11,7 @@ Um zu starten bitte das Repository herunterladen und die folgenden Schritte befo
 - Windows 7/8/8.1/10 Computer
 - Moderner und aktueller Browser (empfohlen werden: [Google Chrome](https://www.google.com/chrome/) oder [Mozilla Firefox](https://www.mozilla.org/de/firefox/new/))
 - Aktuelle Version von [XAMPP](https://www.apachefriends.org/de/index.html) mit Apache Webserver und MqSQL/MariaDB
+- Eine aktive Internetverbindung für die Übertragung der Daten aus dem Kontaktformular per Mail.
 
 ### Installation
 
