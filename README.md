@@ -22,10 +22,10 @@ Um zu starten bitte das Repository herunterladen und die folgenden Schritte befo
     Es wird ein Benutzer Namens 'lagerteam' mit dem Passwort 'lagerteam' angelegt der volle Rechte auf Ihre SQL-Datenbank erlangt.
 6. Öffnen Sie Ihren Browser und Öffnen die Seite http://localhost/www
 7. Um den Intern-Bereich zu nutzen stehen die folgenden Anmeldedaten zur Verfügung:
-    User: Marcel    PW: marcel
-    User: Raphael   PW: raphael
-    User: Nicolas   PW: nicoals
-    User: Tim       PW: tim
+    - User: Marcel    PW: marcel
+    - User: Raphael   PW: raphael
+    - User: Nicolas   PW: nicoals
+    - User: Tim       PW: tim
 
 ## Autoren
 
