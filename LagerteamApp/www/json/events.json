@@ -1,9 +1,3 @@
-//In dieser JSON Datei befinden sich die Termine aus dem Kalender.
-//Sie müssen vorerst noch manuell hinzugefügt werden. Später soll
-//das durch eine Verknüpfung mit der Internseite automatisch hier
-//reingeschrieben werden. Die Syntax und das Auslesen der Datei
-//war vordefiniert.
-
 [
   {
     "title": "All Day Event",
