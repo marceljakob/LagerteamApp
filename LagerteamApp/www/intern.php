@@ -216,6 +216,51 @@ if ($result_getNews->num_rows > 0) {
                 </table>
             </div>
         </section>
+        <!-- Dritte Section Kalender Event hinzufügen -->
+        <section class="container container-navbar-fixed" id="newsticker">
+            <!--Überschrift Seite-->
+            <h1>
+                Event zu Kalender hinzufügen
+            </h1>
+            <!--Überschrift Section-->
+            <h4>
+                <form action="updateKalender.php" method="post">
+                    <div class="form-row">
+                        <div class="col-md-6">
+                            <label class="sr-only" for="inlineFormInputGroup">kalenderTitle</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text" id="title">Event-Titel</div>
+                                </div>
+                                <input type="text" class="form-control" id="eventTitle" name="eventTitle" aria-describedby="Titel des Events" placeholder="Titel des Events" id="inlineFormInputGroup" required>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="form-row">
+                        <div class="col-md-6">
+                            <label class="sr-only" for="inlineFormInputGroup">kalenderStart</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text" id="title">Event-Start</div>
+                                </div>
+                                <input type="datetime-local" class="form-control" id="eventStart" name="eventStart" aria-describedby="Start des Events"  id="inlineFormInputGroup" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="sr-only" for="inlineFormInputGroup">kalenderEnde</label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text" id="title">Event-Ende</div>
+                                </div>
+                                <input type="datetime-local" class="form-control" id="eventEnde" name="eventEnde" aria-describedby="Ende des Events"  id="inlineFormInputGroup">
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn btn-dark" type="submit">senden ➤</button>
+                </form>
+            </h4>
+            <hr>
+        </section>
 
     </main>
 
