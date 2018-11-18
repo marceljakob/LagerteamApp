@@ -19,6 +19,24 @@
     <link rel="stylesheet" href="css/anmeldung.css">
     <link rel="stylesheet" href="css/default.css"/>
 
+    <!-- Script um zu prüfen ob die Checkbox Check akzeptiert wurde -->
+    <script type="text/javascript">
+    function apply()
+    {
+    document.anmeldung.absenden.disabled=true;
+    if(document.anmeldung.check.checked==true)
+    {
+    document.anmeldung.absenden.disabled=false;
+    }
+    if(document.anmeldung.check.checked==false)
+    {
+    document.anmeldung.absenden.enabled=false;
+    }
+    }
+    </script>
+
+
+
 </head>
 
 <body>
@@ -45,7 +63,7 @@
     <!-- Im nachfolgenden main-Bereich wird der Container für das Anmeldeformular definiert -->
     <main>
       <!-- Anmelde Formular -->
-      <form name="anmeldung" method="POST" action="zeltlager-anmeldung.php" onsubmit="return check_blank()";> <!-- Anweisung, wohin die Inputs gesendet werden sollen. -->
+      <form name="anmeldung" method="POST" action="anmeldung.php" onsubmit="return check_blank()";> <!-- Anweisung, wohin die Inputs gesendet werden sollen. -->
          <!--container für das Grid -->
           <div class="container container-navbar-fixed">
              <!--Abschnitt für das Nachname Feld-->
@@ -53,16 +71,16 @@
                   <div class="cold-md-6" id="nachname">
                       <div class="form-group">
                           <label for="formGroupExampleInput">*Nachname:</label>
-                          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Nachname eingeben..." name="nachname" id="nachname">
+                          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Nachname eingeben..." name="nachname" id="nachname" required>
                       </div>
                   </div>
               </div>
                 <!--Abschnitt für das Vorname Feld-->
               <div class="row">
-                  <div class="cold-md-6" id="nachname">
+                  <div class="cold-md-6" id="vorname">
                       <div class="form-group">
                           <label for="formGroupExampleInput">*Vorname:</label>
-                          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Vorname eingeben..." name="nachname" id="nachname">
+                          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Vorname eingeben..." name="vorname" id="vorname" required>
                       </div>
                   </div>
               </div>
@@ -71,7 +89,7 @@
                 <div class="cold-md-6" id="nachname">
                     <div class="form-group">
                         <label for="formGroupExampleInput">*Geburtsdatum:</label>
-                        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Geburtsdatum eingeben..." name="geb" id="geb">
+                        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Geburtsdatum eingeben..." name="geb" id="geb" required>
                     </div>
                 </div>
             </div>
@@ -80,7 +98,7 @@
                   <div class="cold-md-6" id="emailfeld">
                       <div class="form-group">
                           <label for="exampleInputEmail1">*E-Mail Adresse:</label>
-                          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="E-Mail Adresse eingeben..." name="mail" id="mail">
+                          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="E-Mail Adresse eingeben..." name="mail" id="mail" required>
                       </div>
                   </div>
               </div>
@@ -89,7 +107,7 @@
                   <div class="cold-md-6" id="telefonnummer">
                       <div class="form-group">
                           <label for="formGroupExampleInput">*Telefon:</label>
-                          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Telefonnummer eingeben..." name="tel" id="tel">
+                          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Telefonnummer eingeben..." name="tel" id="tel" required>
                       </div>
                   </div>
               </div>
@@ -98,7 +116,7 @@
                   <div class="cold-md-6" id="strasse">
                       <div class="form-group">
                           <label for="formGroupExampleInput">*Straße + Hausnummer:</label>
-                          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Straße & Hausnummer..." name="strasse" id="strasse">
+                          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Straße & Hausnummer..." name="strasse" id="strasse" required>
                       </div>
                   </div>
               </div>
@@ -107,7 +125,7 @@
                   <div class="cold-md-6" id="plz">
                       <div class="form-group">
                           <label for="formGroupExampleInput">*Postleihzahl:</label>
-                          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="PLZ eingeben..." name="plz" id="plz">
+                          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="PLZ eingeben..." name="plz" id="plz" required>
                       </div>
                   </div>
               </div>
@@ -116,7 +134,7 @@
                   <div class="cold-md-6" id="ort">
                       <div class="form-group">
                           <label for="formGroupExampleInput">*Ort:</label>
-                          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Ort eingeben..." name="ort" id="ort">
+                          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Ort eingeben..." name="ort" id="ort" required>
                       </div>
                   </div>
               </div>
@@ -127,24 +145,62 @@
                   <div class="cold-md-6" id="mitteilung">
                       <div class="form-group">
                           <label for="exampleFormControlTextarea1">*Mitteilung:</label>
-                          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Deine Nachricht an uns!" name="mitteilung" id="mitteilung"></textarea>
+                          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Deine Nachricht an uns!" name="mitteilung" id="mitteilung" required></textarea>
                       </div>
+                  </div>
+              </div>
+              <!--Abschnitt für den Zuschuss-->
+              <div class="row">
+                  <div class="cold-md-6" id="zuschuss">
+                      <div class="form-group">
+                          <label for="formGroupExampleInput">*Beantragen Sie einen Zuschuss:</label>
+                          </br>
+                          <select name="zuschuss" size="1">
+                              <option>Nein</option>
+                              <option>Ja</option> <select/>
+                      </div>
+                  </div>
+              </div>
+
+              <!--Abschnitt für die KJG Zugehörigkeit-->
+              <div class="row">
+                  <div class="cold-md-6" id="kjg">
+                      <div class="form-group">
+                          <label for="formGroupExampleInput">*Ist Ihr Kind Mitglied bei unserer Ferienfreizeit?</label>
+                          </br>
+                          <select name="kjg" size="1">
+                              <option>Nein</option>
+                              <option>Ja</option> <select/>
+                      </div>
+                  </div>
+              </div>
+              <!--- Hinweis für die Richtigkeit der Angaben -->
+              <div class="row">
+                  <div class="cold-md-6" id="pflichtfelder">
+              <label for="check">
+              <input type="checkbox" name="check" onClick="apply()">
+                <a id="show_id1" onclick="document.getElementById('spoiler_id1').style.display=''; document.getElementById('show_id1').style.display='none';" class="link">
+                  <u>&nbsp;Hiermit best&auml;tige ich die Richtigkeit der Angaben und akzeptiere die verlinkten Bedingungen.</u></a>
+                  <span id="spoiler_id1" style="display: none"><a onclick="document.getElementById('spoiler_id1').style.display='none'; document.getElementById('show_id1').style.display='';" class="link">
+                    <u>&nbsp;Hiermit best&auml;tige ich die Richtigkeit der Angaben und akzeptiere die verlinkten Bedingungen.</u></a><br />
+                  <p><li>Die Anmeldung &uuml;ber das Onlineformular ersetzt vollst&auml;ndig die klassische Zeltlager-Anmeldung in Papierform.</li></p>
+                  <p><li>Alle weiteren Informationen werden Ihnen an die angegebene Email-Adresse &uuml;bermittelt.</li></p>
+
+                  </span>
+                  </div>
+                  </<div>
+                    </div>
+
+              <!--Absenden Button-->
+              <div class="row">
+                  <div class="cold-md-6" id="bestaetigen">
+                      <button type="submit" class="btn btn-primary btn-menu" name="absenden" value="submit" disabled>Formular abschicken</button>
                   </div>
               </div>
               <!--Abschnitt für den Hinweis Pflichtfelder-->
               <div class="row">
                   <div class="cold-md-6" id="pflichtfelder">
                       mit * gekennzeichnete Felder sind Pflichtfelder!
-                  </div>
-              </div>
-
-              <!--Absenden Button-->
-              <div class="row">
-                  <div class="cold-md-6" id="bestaetigen">
-                      <button type="submit" class="btn btn-primary btn-menu" id="buttonAbsenden">Absenden!
-
-                      </button>
-
                   </div>
               </div>
 
