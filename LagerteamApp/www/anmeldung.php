@@ -65,21 +65,17 @@
         $timestamp = time();
         $anmelde_dat = date("d.m.Y - H:i", $timestamp);
 
-          /*
-        //Anmeldung in die DATENBANK
-        $sql_einfuegen ="INSERT INTO anmeldungen(anmelde_dat; n_name, v_name, strasse_nr, plz, ort, geb_dat, telefon, email, zuschuss, mitglied, freitext)
-        VALUES ('$anmelde_dat', '$nachname', '$vorname', '$strasse', '$plz', '$ort', '$geb' '$telefon', '$email', '$zuschuss', '$kjg', '$mitteilung')";
-*/
-
         $sql_einfuegen ="INSERT INTO anmeldungen(anmelde_dat, n_name, v_name, strasse_nr, plz, ort, geb_dat, telefon, email, zuschuss, mitglied, freitext)VALUES ('$anmelde_dat', '$nachname', '$vorname', '$strasse', '$plz', '$ort', '$geb', '$telefon', '$email', '$zuschuss', '$kjg', '$mitteilung')";
         $result_einfuegen = $conn->prepare($sql_einfuegen);
 
-        $result_einfuegen->execute();
-
         if(!$result_einfuegen->execute()) {
         echo " Query fehlgeschlagen: Bitte an Administrator wenden!";
-      } elseif($result_einfuegen->execute()) {
+        echo "</br>";
+        echo "Hier gehts zurück zur  <a href='./'>Startseite</a>!";
+      } else {
         echo " Anmeldung erfolgreich! Ihr Sohn ".$vorname." ".$nachname." wurde zum Zeltlager angemeldet!";
+        echo "</br>";
+        echo "Hier gehts zurück zur  <a href='./'>Startseite</a>!";
         }
 
 
