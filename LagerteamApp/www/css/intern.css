@@ -69,3 +69,6 @@ hr{
     display: inline-block;
     color: #ddd;
 }
+.form-row{
+   margin-bottom: 10pt;
+}
