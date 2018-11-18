@@ -113,7 +113,7 @@ if(!empty($_POST['username'])) {
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
                 <a class="nav-item nav-link" href="./">Menü</a>
-                <a class="nav-item nav-link" href="">Online-Anmeldung</a>
+                <a class="nav-item nav-link" href="anmeldung.html">Online-Anmeldung</a>
                 <a class="nav-item nav-link" href="kalender.html">Kalender</a>
                 <a class="nav-item nav-link" href="galerie.html">Galerie</a>
                 <a class="nav-item nav-link" href="songtexte.html">Songtexte</a>
