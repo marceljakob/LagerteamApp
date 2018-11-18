@@ -36,70 +36,6 @@
     </script>
 
 
-    <!-- Script um zu prüfen ob alle Textfelder ausgefüllt wurden, ansonsten Fehlermeldung anzeigen -->
-    <script type="text/javascript">
-    function check_blank()
-    {
-    // Nachname
-    if (anmeldung.nachname.value == "")
-    {
-    alert("Bitte \u00dcberpr\u00fcfen Sie Ihre Eingabe, Sie haben ein oder mehrere Textfelder nicht ausgef\u00fcllt.");
-    anmeldung.nachname.focus();
-    return false;
-    }
-    // Vorname
-    if (anmeldung.vorname.value == "")
-    {
-    alert("Bitte \u00dcberpr\u00fcfen Sie Ihre Eingabe, Sie haben ein oder mehrere Textfelder nicht ausgef\u00fcllt.");
-    return false;
-    }
-    // Strasse
-    if (anmeldung.strasse.value == "")
-    {
-    alert("Bitte \u00dcberpr\u00fcfen Sie Ihre Eingabe, Sie haben ein oder mehrere Textfelder nicht ausgef\u00fcllt.");
-    return false;
-    }
-    // PLZ
-    if (anmeldung.plz.value == "")
-    {
-    alert("Bitte \u00dcberpr\u00fcfen Sie Ihre Eingabe, Sie haben ein oder mehrere Textfelder nicht ausgef\u00fcllt.");
-    return false;
-    }
-    // ort
-    if (anmeldung.ort.value == "")
-    {
-    alert("Bitte \u00dcberpr\u00fcfen Sie Ihre Eingabe, Sie haben ein oder mehrere Textfelder nicht ausgef\u00fcllt.");
-    return false;
-    }
-    // Tag
-    if (anmeldung.geb.value == "")
-    {
-    alert("Bitte \u00dcberpr\u00fcfen Sie Ihre Eingabe, Sie haben ein oder mehrere Textfelder nicht ausgef\u00fcllt.");
-    return false;
-    }
-    }
-    // Telefon
-    if (anmeldung.tel.value == "")
-    {
-    alert("Bitte \u00dcberpr\u00fcfen Sie Ihre Eingabe, Sie haben ein oder mehrere Textfelder nicht ausgef\u00fcllt.");
-    return false;
-    }
-    // Email
-    if (anmeldung.mail.value == "")
-    {
-    alert("Bitte \u00dcberpr\u00fcfen Sie Ihre Eingabe, Sie haben ein oder mehrere Textfelder nicht ausgef\u00fcllt.");
-    return false;
-    }
-    // Name des Erziehungsberechtigten
-    if (anmeldung.mitteilung.value == "")
-    {
-    alert("Bitte \u00dcberpr\u00fcfen Sie Ihre Eingabe, Sie haben ein oder mehrere Textfelder nicht ausgef\u00fcllt.");
-    return false;
-    }
-
-    return true;
-    }
-    </script>
 
 </head>
 
@@ -135,16 +71,16 @@
                   <div class="cold-md-6" id="nachname">
                       <div class="form-group">
                           <label for="formGroupExampleInput">*Nachname:</label>
-                          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Nachname eingeben..." name="nachname" id="nachname">
+                          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Nachname eingeben..." name="nachname" id="nachname" required>
                       </div>
                   </div>
               </div>
                 <!--Abschnitt für das Vorname Feld-->
               <div class="row">
-                  <div class="cold-md-6" id="nachname">
+                  <div class="cold-md-6" id="vorname">
                       <div class="form-group">
                           <label for="formGroupExampleInput">*Vorname:</label>
-                          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Vorname eingeben..." name="nachname" id="nachname">
+                          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Vorname eingeben..." name="vorname" id="vorname" required>
                       </div>
                   </div>
               </div>
@@ -153,7 +89,7 @@
                 <div class="cold-md-6" id="nachname">
                     <div class="form-group">
                         <label for="formGroupExampleInput">*Geburtsdatum:</label>
-                        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Geburtsdatum eingeben..." name="geb" id="geb">
+                        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Geburtsdatum eingeben..." name="geb" id="geb" required>
                     </div>
                 </div>
             </div>
@@ -162,7 +98,7 @@
                   <div class="cold-md-6" id="emailfeld">
                       <div class="form-group">
                           <label for="exampleInputEmail1">*E-Mail Adresse:</label>
-                          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="E-Mail Adresse eingeben..." name="mail" id="mail">
+                          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="E-Mail Adresse eingeben..." name="mail" id="mail" required>
                       </div>
                   </div>
               </div>
@@ -171,7 +107,7 @@
                   <div class="cold-md-6" id="telefonnummer">
                       <div class="form-group">
                           <label for="formGroupExampleInput">*Telefon:</label>
-                          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Telefonnummer eingeben..." name="tel" id="tel">
+                          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Telefonnummer eingeben..." name="tel" id="tel" required>
                       </div>
                   </div>
               </div>
@@ -180,7 +116,7 @@
                   <div class="cold-md-6" id="strasse">
                       <div class="form-group">
                           <label for="formGroupExampleInput">*Straße + Hausnummer:</label>
-                          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Straße & Hausnummer..." name="strasse" id="strasse">
+                          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Straße & Hausnummer..." name="strasse" id="strasse" required>
                       </div>
                   </div>
               </div>
@@ -189,7 +125,7 @@
                   <div class="cold-md-6" id="plz">
                       <div class="form-group">
                           <label for="formGroupExampleInput">*Postleihzahl:</label>
-                          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="PLZ eingeben..." name="plz" id="plz">
+                          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="PLZ eingeben..." name="plz" id="plz" required>
                       </div>
                   </div>
               </div>
@@ -198,7 +134,7 @@
                   <div class="cold-md-6" id="ort">
                       <div class="form-group">
                           <label for="formGroupExampleInput">*Ort:</label>
-                          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Ort eingeben..." name="ort" id="ort">
+                          <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Ort eingeben..." name="ort" id="ort" required>
                       </div>
                   </div>
               </div>
@@ -209,7 +145,7 @@
                   <div class="cold-md-6" id="mitteilung">
                       <div class="form-group">
                           <label for="exampleFormControlTextarea1">*Mitteilung:</label>
-                          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Deine Nachricht an uns!" name="mitteilung" id="mitteilung"></textarea>
+                          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Deine Nachricht an uns!" name="mitteilung" id="mitteilung" required></textarea>
                       </div>
                   </div>
               </div>

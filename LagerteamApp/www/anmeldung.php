@@ -44,10 +44,12 @@
 
     <!-- Im nachfolgenden main-Bereich wird der Container für das Anmeldeformular definiert -->
     <main>
+    </br></br></br>
         <!-- Container für das Anmeldeformular -->
         <?php
-        include 'dbConnect.php';
 
+
+        include 'dbConnect.php';
 
         $nachname = $_POST['nachname'];
         $vorname = $_POST['vorname'];
@@ -58,20 +60,35 @@
         $geb = $_POST['geb'];
         $email = $_POST['mail'];
         $zuschuss = $_POST['zuschuss'];
-        $kjgmitglied = $_POST['kjg'];
+        $kjg = $_POST['kjg'];
         $mitteilung = $_POST['mitteilung'];
         $timestamp = time();
         $anmelde_dat = date("d.m.Y - H:i", $timestamp);
 
+          /*
         //Anmeldung in die DATENBANK
-        $sql_einfuegen ="INSERT INTO anmeldungen(n_name, v_name, strasse_nr, plz, ort, geb_dat, telefon, email, zuschuss, mitglied, mitteilung) VALUES
-        ('$nachname', '$vorname', '$strasse', '$plz', '$ort', '$telefon', '$geb'. '$email', '$zuschuss', '$kjgmitglied', '$mitteilung')";
+        $sql_einfuegen ="INSERT INTO anmeldungen(anmelde_dat; n_name, v_name, strasse_nr, plz, ort, geb_dat, telefon, email, zuschuss, mitglied, freitext)
+        VALUES ('$anmelde_dat', '$nachname', '$vorname', '$strasse', '$plz', '$ort', '$geb' '$telefon', '$email', '$zuschuss', '$kjg', '$mitteilung')";
+*/
 
-        $result_einfuegen = $conn->query($sql_einfuegen);
+        $sql_einfuegen ="INSERT INTO anmeldungen(anmelde_dat, n_name, v_name, strasse_nr, plz, ort, geb_dat, telefon, email, zuschuss, mitglied, freitext)VALUES ('$anmelde_dat', '$nachname', '$vorname', '$strasse', '$plz', '$ort', '$geb', '$telefon', '$email', '$zuschuss', '$kjg', '$mitteilung')";
+        $result_einfuegen = $conn->prepare($sql_einfuegen);
+
+        $result_einfuegen->execute();
+
+        if(!$result_einfuegen->execute()) {
+        echo " Query fehlgeschlagen: Bitte an Administrator wenden!";
+      } elseif($result_einfuegen->execute()) {
+        echo " Anmeldung erfolgreich! Ihr Sohn ".$vorname." ".$nachname." wurde zum Zeltlager angemeldet!";
+        }
+
+
+
         ?>
+      </main>
 
 
 
-</body>
+  </body>
 
-</html>
+  </html>
