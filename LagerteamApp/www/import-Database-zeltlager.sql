@@ -1,22 +1,4 @@
--- phpMyAdmin SQL Dump
--- version 4.8.3
--- https://www.phpmyadmin.net/
---
--- Host: 127.0.0.1
--- Erstellungszeit: 21. Okt 2018 um 16:12
--- Server-Version: 10.1.36-MariaDB
--- PHP-Version: 7.2.10
-
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
-SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+﻿
 
 CREATE USER 'lagerteam'@'localhost' IDENTIFIED BY 'lagerteam';
 
@@ -48,7 +30,7 @@ CREATE TABLE `admins` (
 INSERT INTO `admins` (`admin_id`, `username`, `password`, `fehlanmeldungen`, `gesperrt`) VALUES
 (1, 'Tim', '$2y$10$fXZo3saweCMDys.76uFHze/1.vStMbGCex8tyDrvsELTxNRZ9gNVS', 0, b'0'),
 (2, 'Marcel', '$2y$10$R.l7B52Xq.R0TAm.TSFa9ef93zKYu0sqaTl1AXK293y.Iy5N/74nC', 0, b'0'),
-(3, 'Nicoals', '$2y$10$J0C0sv0A/WsP1bNvcyR1R./NohZuNORMEclyPaBbeDI5Dr4AIFjEu', 0, b'0'),
+(3, 'Nicolas', '$2y$10$J0C0sv0A/WsP1bNvcyR1R./NohZuNORMEclyPaBbeDI5Dr4AIFjEu', 0, b'0'),
 (4, 'Raphael', '$2y$10$MPaaN8/KDRl6k2zTs3q2Fe.iqUNiEue0Vu7WmPUXEcncAM62LEb3u', 0, b'0');
 
 -- --------------------------------------------------------
@@ -174,7 +156,3 @@ ALTER TABLE `kontaktformular`
 ALTER TABLE `newsticker`
   MODIFY `newsticker_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=118;
 COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

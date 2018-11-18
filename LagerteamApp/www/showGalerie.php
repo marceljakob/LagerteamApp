@@ -49,19 +49,19 @@ $folder=$_GET["show"];
 <body>
     <!-- Navigationsleiste (fixed)-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <a class="navbar-brand" href="#">Logo</a>
+        <a class="navbar-brand" href="./"><img src="img/logo.png"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-item nav-link active" href="#">Menü  <span class="sr-only">(current)</span></a>
-                <a class="nav-item nav-link" href="#">Online-Anmeldung</a>
-                <a class="nav-item nav-link" href="#">Kalender</a>
-                <a class="nav-item nav-link" href="#">Galerie</a>
-                <a class="nav-item nav-link" href="#">Songtexte</a>
-                <a class="nav-item nav-link" href="#">Kontakt</a>
-                <a class="nav-item nav-link" href="#">Intern</a>
+                <a class="nav-item nav-link" href="./">Menü  </a>
+                <a class="nav-item nav-link" href="anmeldung.html">Online-Anmeldung</a>
+                <a class="nav-item nav-link" href="kalender.html">Kalender</a>
+                <a class="nav-item nav-link active" href="galerie.html">Galerie <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="songtexte.html">Songtexte</a>
+                <a class="nav-item nav-link" href="kontaktformular.php">Kontakt</a>
+                <a class="nav-item nav-link" href="intern.php">Intern</a>
             </div>
         </div>
     </nav>
@@ -74,6 +74,7 @@ $folder=$_GET["show"];
         Zuständig für den margin-top Abstand von der fixed-Navbar.
         -->
         <section class="container container-navbar-fixed">
+          <a href="galerie.html"><button type="button" class="backbutton btn btn-dark">◄ &nbsp; Zurück zur Auswahl</button></a>
             <h1>Galerie <?php echo $folder; ?></h1>
             <div class="demo">
               <ul id="lightSlider">

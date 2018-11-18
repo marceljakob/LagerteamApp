@@ -15,8 +15,7 @@
 
     <!-- Eigene Stylesheets & Scripte-->
     <link rel="stylesheet" href="css/galerie.css"/>
-    <link rel="stylesheet" href="css/eigene.css" />
-    <script src="js/eigene.js"></script>
+
 </head>
 
 <body>
@@ -48,31 +47,21 @@
         -->
         <section class="container container-navbar-fixed">
             <h1>Galerie</h1>
-            <h3></h3>
-            <div class="fotos" id=img1>
-              <a href='showGalerie.php?show=2018'><button type="button" id=im1 >Zeltlager 2018<img src="img\Galerie_Placeholder\logo.jpg"></button></a>
-              <b>Zeltlager 2018</b>
-            </div>
-            <div class="fotos" id=img2>
-              <button type="button" id=im2 onclick="javascript:location.href='showGalerie.html#2017'">Zeltlager 2017<img src="img\Galerie_Placeholder\logo.jpg"></button>
-              <b>Zeltlager 2017</b>
-            </div>
-            <div class="fotos" id=img3>
-              <button type="button" id=im3 onclick="javascript:location.href='showGalerie.html#2016'">Zeltlager 2016<img src="img\Galerie_Placeholder\logo.jpg"></button>
-              <b>Zeltlager 2016</b>
-            </div>
-            <div class="fotos" id=img4>
-              <button type="button" id=im4 onclick="javascript:location.href='showGalerie.html#Ältere'">Ältere Zeltlager<img src="img\Galerie_Placeholder\logo.jpg"></button>
-              <b>Ältere Zeltlager</b>
-            </div>
-            <div class="fotos" id=img5>
-              <button type="button" id=im5 onclick="javascript:location.href='showGalerie.html#Jubi'">Jubiläums-Fest<img src="img\Galerie_Placeholder\logo.jpg"></button>
-              <b>Jubiläums-Fest</b>
-            </div>
-            <div class="fotos" id=img6>
-              <button type="button" id=im6 onclick="javascript:location.href='showGalerie.html#Impression'">Alte Impression<img src="img\Galerie_Placeholder\logo.jpg"></button>
-              <b>Alte Impression</b>
-            </div>
+
+              <!-- Im folgenden sind die 6 Buttons mit hinterlegtem Link definiert, womit man auf die zugehörige Galerie gelangt.-->
+
+              <a href='showGalerie.php?show=2018'><button type="button" class="fotos" id=im1 >Zeltlager 2018</button></a>
+
+              <a href='showGalerie.php?show=2017'><button type="button" class="fotos" id=im2 >Zeltlager 2017</button></a>
+
+              <a href='showGalerie.php?show=2016'><button type="button" class="fotos"id=im3 >Zeltlager 2016</button></a>
+
+              <a href='showGalerie.php?show=2015'><button type="button" class="fotos"id=im4 >Zeltlager 2015</button></a>
+
+              <a href='showGalerie.php?show=Jubiläum'><button type="button" class="fotos"id=im5 >Jubiläums-Fest</button></a>
+
+              <a href='showGalerie.php?show=Alte Impression'><button type="button" class="fotos"id=im6 >Alte Impression</button></a>
+
         </section>
     </main>
 
